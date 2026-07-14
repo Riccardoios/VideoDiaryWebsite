@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video Diary: Simple, Private Video Journal App for iPhone</title>
+<meta name="description" content="Video Diary is the simplest video journaling app for iPhone. Record a video a day, track your mood, and turn clips into a movie of memories. No AI, private.">
+<link rel="canonical" href="https://videodiary.app/">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" as="image" href="/assets/screenshot-1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Video Diary">
+<meta property="og:title" content="Video Diary — The Simplest Video Journaling App for iPhone">
+<meta property="og:description" content="Open the app, tap record, done. A private video diary with mood tracking and a montage maker that turns your days into a movie. No AI, no sharing, just you.">
+<meta property="og:url" content="https://videodiary.app/">
+<meta property="og:image" content="https://videodiary.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Video Diary — The Simplest Video Journaling App for iPhone">
+<meta name="twitter:description" content="A private video diary with mood tracking and a montage maker. No AI, no sharing, just you and your story.">
+<meta name="twitter:image" content="https://videodiary.app/assets/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Video Journal: Video Diary",
+  "operatingSystem": "iOS 17.6 or later, macOS 14.6 or later, visionOS 1.3 or later",
+  "applicationCategory": "LifestyleApplication",
+  "description": "Video Diary is the simplest way to capture your life through video journaling. No distractions, no AI filters or chatbots — just you and your story.",
+  "image": "https://videodiary.app/assets/icon-1024.png",
+  "url": "https://videodiary.app/",
+  "installUrl": "https://apps.apple.com/us/app/video-diary/id1606008204",
+  "author": { "@type": "Person", "name": "Riccardo Carlotto" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "24" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a video diary and how does it work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A video diary is a journal you keep by recording short videos of yourself or your day instead of writing. You open the app, tap record, speak or film your moment, and the entry is saved to a private calendar you can look back on anytime." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the benefits of video journaling compared to writing?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Video journaling captures your voice, face, and surroundings — details a written journal can't hold. It's faster than writing, easier to stick with, and rewatching old entries brings memories back far more vividly than text." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best video diary app for iPhone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The best video diary app is the one you'll actually use every day. Video Diary is built for exactly that: one-tap recording, a calendar of your entries, mood tracking, and a montage maker — with no AI, no feed, and no account required." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I record one second every day and turn it into a movie?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Record a short clip each day — one second or one minute, it's up to you — and Video Diary's montage maker combines your daily videos into a single movie of your memories." }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I talk about in my video diary?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Anything on your mind: how the day went, something you're grateful for, a worry you want to think through. Video Diary shows you a fresh reflection prompt on the record screen every day, so you never face a blank camera." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my video diary private? Does Video Diary use AI?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Your videos stay yours. Video Diary uses no AI processing and no hidden sharing, there is no social feed, and you can lock the app with Face ID. It's private by design." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can video journaling help with mental health and self-reflection?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Many people use video journaling to process emotions, reduce anxiety, and build self-awareness — talking to the camera works like thinking out loud. Video Diary adds mood tracking and an Insight view so you can notice patterns over time." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I make a montage from my daily videos?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Open the Gallery tab and tap Create Montage. Video Diary automatically combines your daily entries into one beautiful movie — no editing skills needed." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Video Diary free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, Video Diary is free to download and use for daily video journaling. An optional Premium subscription adds exclusive color palettes, unique fonts, Face ID lock, and iCloud backup." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which devices does Video Diary work on?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Video Diary runs on iPhone and iPad (iOS 17.6+), Apple Silicon Macs (macOS 14.6+), and Apple Vision Pro (visionOS 1.3+). It's available in English, French, German, Italian, Japanese, Simplified Chinese, and Spanish." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <img src="/assets/apple-touch-icon.png" alt="Video Diary app icon — hand-drawn diary with a red video camera" width="40" height="40">
+      Video Diary
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#how-it-works">How it works</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="/guides/">Guides</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="https://apps.apple.com/us/app/video-diary/id1606008204">Get the app</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <img class="hero-icon" src="/assets/icon-1024.png" alt="Video Diary — video journal app icon" width="88" height="88">
+      <h1>The video diary app that keeps journaling <span>simple</span>.</h1>
+      <p class="hero-sub">Open the app, tap record, done. Video Diary is a private video journal for iPhone — no AI chatbots, no filters, no feed. Just you and your story, one video a day.</p>
+      <ul class="hero-points">
+        <li>Start recording in one tap — no setup, no account</li>
+        <li>Private by design: no AI, no hidden sharing, Face&nbsp;ID lock</li>
+        <li>Turn your daily videos into a movie of memories</li>
+      </ul>
+      <div class="hero-actions">
+        <a class="store-badge" href="https://apps.apple.com/us/app/video-diary/id1606008204" aria-label="Download Video Diary on the App Store">
+          <svg viewBox="0 0 200 60" role="img" aria-hidden="true" focusable="false">
+            <rect x="1" y="1" width="198" height="58" rx="11" fill="#000" stroke="#a6a6a6" stroke-width="1.5"/>
+            <g transform="translate(18 14) scale(2.05)" fill="#fff">
+              <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43m3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422s1.675-2.789 1.698-2.854-.597-.79-1.254-1.157a3.7 3.7 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.091-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56s.625 1.924 1.273 2.796c.576.984 1.34 1.667 1.659 1.899s1.219.386 1.843.067c.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758q.52-1.185.473-1.282"/>
+            </g>
+            <text x="60" y="26" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12">Download on the</text>
+            <text x="60" y="48" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600">App Store</text>
+          </svg>
+        </a>
+        <p class="rating"><span class="stars" aria-hidden="true">★★★★½</span><br><strong>4.5</strong> on the App Store · Free</p>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="/assets/screenshot-1.png" alt="Video Diary app calendar view showing a video journal entry recorded every day of the month" width="1284" height="2778">
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOWNLOAD BAND ============ -->
+<section class="download-band" id="download">
+  <div class="wrap">
+    <div>
+      <h2>Free on the App Store</h2>
+      <p>Built for iPhone · In 7 languages</p>
+    </div>
+    <a class="store-badge" href="https://apps.apple.com/us/app/video-diary/id1606008204" aria-label="Download Video Diary free on the App Store">
+      <svg viewBox="0 0 200 60" role="img" aria-hidden="true" focusable="false">
+        <rect x="1" y="1" width="198" height="58" rx="11" fill="#000" stroke="#a6a6a6" stroke-width="1.5"/>
+        <g transform="translate(18 14) scale(2.05)" fill="#fff">
+          <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43m3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422s1.675-2.789 1.698-2.854-.597-.79-1.254-1.157a3.7 3.7 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.091-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56s.625 1.924 1.273 2.796c.576.984 1.34 1.667 1.659 1.899s1.219.386 1.843.067c.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758q.52-1.185.473-1.282"/>
+        </g>
+        <text x="60" y="26" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12">Download on the</text>
+        <text x="60" y="48" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600">App Store</text>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ SCREENSHOTS ============ -->
+<section id="screenshots">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Journaling with videos. Nothing else.</h2>
+      <p>A daily video journal that looks like a diary, not a social network. Hand-drawn, warm, and entirely yours.</p>
+    </div>
+    <div class="shots" role="list">
+      <figure role="listitem">
+        <img src="/assets/screenshot-1.png" alt="Calendar view of the Video Diary app with a daily video journal entry on each day" width="1284" height="2778" loading="lazy">
+        <figcaption>Your life, day by day</figcaption>
+      </figure>
+      <figure role="listitem">
+        <img src="/assets/screenshot-2.png" alt="Recording a video diary entry with a daily journal prompt and mood tracker" width="1284" height="2778" loading="lazy">
+        <figcaption>One tap to record, prompts included</figcaption>
+      </figure>
+      <figure role="listitem">
+        <img src="/assets/screenshot-3.png" alt="Video Diary gallery creating a montage movie from daily video journal entries" width="1284" height="2778" loading="lazy">
+        <figcaption>Montages from your daily clips</figcaption>
+      </figure>
+      <figure role="listitem">
+        <img src="/assets/screenshot-4.png" alt="Choosing a custom color palette to personalize the Video Diary journaling app" width="1284" height="2778" loading="lazy">
+        <figcaption>Palettes &amp; fonts that feel yours</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section-alt" id="how-it-works">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How Video Diary works</h2>
+      <p>Three steps. No onboarding maze, no AI assistant asking how you feel — a video journal you'll actually keep.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>Open &amp; record</h3>
+        <p>Launch the app and you're already at the camera. Tap the red REC button, say what's on your mind — a daily prompt helps if you're stuck. Add a mood and an optional note.</p>
+      </div>
+      <div class="step">
+        <h3>Relive &amp; reflect</h3>
+        <p>Every entry lands on your calendar, so scrolling back through your months feels like flipping a diary. The Insight view reveals your mood patterns over time.</p>
+      </div>
+      <div class="step">
+        <h3>Create your montage</h3>
+        <p>When you want the highlight reel, tap Create Montage. Your daily videos become one beautiful movie of memories — no editing required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUIDES ============ -->
+<section id="guides">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Video journaling guides</h2>
+      <p>Everything you need to start — and keep — a video diary habit.</p>
+    </div>
+    <div class="guide-grid">
+      <a class="guide-card" href="/guides/how-to-start-a-video-diary.html">
+        <h3>How to start a video diary</h3>
+        <p>A beginner's routine for recording your first entries and making the habit stick.</p>
+        <span class="go">Read the guide →</span>
+      </a>
+      <a class="guide-card" href="/guides/benefits-of-video-journaling.html">
+        <h3>Benefits of video journaling</h3>
+        <p>What video captures that written journals can't — and what the research says.</p>
+        <span class="go">Read the guide →</span>
+      </a>
+      <a class="guide-card" href="/guides/best-video-diary-app-iphone.html">
+        <h3>Best video diary app for iPhone</h3>
+        <p>What actually matters when choosing a video journal app (and what to avoid).</p>
+        <span class="go">Read the guide →</span>
+      </a>
+      <a class="guide-card" href="/guides/one-second-a-day-video-journal.html">
+        <h3>One second a day, one movie a year</h3>
+        <p>How to record a tiny clip every day and turn a year into a film.</p>
+        <span class="go">Read the guide →</span>
+      </a>
+      <a class="guide-card" href="/guides/video-journal-prompts.html">
+        <h3>30 video journal prompts</h3>
+        <p>Never face a blank camera — prompts for gratitude, growth, and everyday life.</p>
+        <span class="go">Read the guide →</span>
+      </a>
+      <a class="guide-card" href="/guides/private-video-diary.html">
+        <h3>Keeping a private video diary</h3>
+        <p>Why privacy matters for honest journaling, and how to lock your entries down.</p>
+        <span class="go">Read the guide →</span>
+      </a>
+      <a class="guide-card" href="/guides/video-journaling-for-mental-health.html">
+        <h3>Video journaling for mental health</h3>
+        <p>Using the camera to process emotions, track moods, and build self-awareness.</p>
+        <span class="go">Read the guide →</span>
+      </a>
+      <a class="guide-card" href="/guides/how-to-make-a-memory-montage.html">
+        <h3>How to make a memory montage</h3>
+        <p>Turn your daily clips into one movie you'll rewatch forever — automatically.</p>
+        <span class="go">Read the guide →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section-alt" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>What is a video diary and how does it work?</summary>
+        <div class="answer">
+          <p>A video diary is a journal you keep by recording short videos instead of writing. You open the app, tap record, speak or film your moment, and the entry is saved to a private calendar you can revisit anytime.</p>
+          <a class="learn-more" href="/guides/how-to-start-a-video-diary.html">Learn more: how to start a video diary →</a>
+        </div>
+      </details>
+      <details>
+        <summary>What are the benefits of video journaling compared to writing?</summary>
+        <div class="answer">
+          <p>Video captures your voice, your face, and the world around you — details text can't hold. It's faster than writing, easier to stick with, and rewatching old entries brings memories back vividly.</p>
+          <a class="learn-more" href="/guides/benefits-of-video-journaling.html">Learn more: benefits of video journaling →</a>
+        </div>
+      </details>
+      <details>
+        <summary>What is the best video diary app for iPhone?</summary>
+        <div class="answer">
+          <p>The best app is the one you'll open every day. Video Diary is built for that: one-tap recording, a calendar of entries, mood tracking, and a montage maker — no AI, no feed, no account required.</p>
+          <a class="learn-more" href="/guides/best-video-diary-app-iphone.html">Learn more: choosing a video diary app →</a>
+        </div>
+      </details>
+      <details>
+        <summary>Can I record one second every day and turn it into a movie?</summary>
+        <div class="answer">
+          <p>Yes. Record a short clip each day — one second or one minute — and the montage maker combines your daily videos into a single movie of your memories.</p>
+          <a class="learn-more" href="/guides/one-second-a-day-video-journal.html">Learn more: one second a day journaling →</a>
+        </div>
+      </details>
+      <details>
+        <summary>What should I talk about in my video diary?</summary>
+        <div class="answer">
+          <p>Anything on your mind: how the day went, something you're grateful for, a decision you're weighing. Video Diary shows a fresh reflection prompt on the record screen every day, so you never face a blank camera.</p>
+          <a class="learn-more" href="/guides/video-journal-prompts.html">Learn more: 30 video journal prompts →</a>
+        </div>
+      </details>
+      <details>
+        <summary>Is my video diary private? Does Video Diary use AI?</summary>
+        <div class="answer">
+          <p>Your videos stay yours. There is no AI processing, no hidden sharing, and no social feed — and you can lock the app with Face ID. Private by design.</p>
+          <a class="learn-more" href="/guides/private-video-diary.html">Learn more: keeping a private video diary →</a>
+        </div>
+      </details>
+      <details>
+        <summary>Can video journaling help with mental health and self-reflection?</summary>
+        <div class="answer">
+          <p>Talking to the camera works like thinking out loud: it helps process emotions and build self-awareness. Video Diary adds mood tracking and an Insight view so you can notice patterns over time.</p>
+          <a class="learn-more" href="/guides/video-journaling-for-mental-health.html">Learn more: video journaling for mental health →</a>
+        </div>
+      </details>
+      <details>
+        <summary>How do I make a montage from my daily videos?</summary>
+        <div class="answer">
+          <p>Open the Gallery tab and tap Create Montage. Video Diary automatically combines your entries into one beautiful movie — no editing skills needed.</p>
+          <a class="learn-more" href="/guides/how-to-make-a-memory-montage.html">Learn more: how to make a memory montage →</a>
+        </div>
+      </details>
+      <details>
+        <summary>Is Video Diary free?</summary>
+        <div class="answer">
+          <p>Yes — free to download and free for daily video journaling. An optional Premium subscription adds exclusive color palettes, unique fonts, Face ID lock, and iCloud backup.</p>
+          <a class="learn-more" href="https://apps.apple.com/us/app/video-diary/id1606008204">Get Video Diary free on the App Store →</a>
+        </div>
+      </details>
+      <details>
+        <summary>Which devices does Video Diary work on?</summary>
+        <div class="answer">
+          <p>iPhone and iPad (iOS 17.6+), Apple Silicon Macs (macOS 14.6+), and Apple Vision Pro (visionOS 1.3+). Available in English, French, German, Italian, Japanese, Simplified Chinese, and Spanish.</p>
+          <a class="learn-more" href="https://apps.apple.com/us/app/video-diary/id1606008204">See Video Diary on the App Store →</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta">
+  <div class="wrap">
+    <img class="hero-icon" src="/assets/icon-1024.png" alt="" width="88" height="88" loading="lazy">
+    <h2>Your life, one video at a time.</h2>
+    <p>Future you will want to see today. Start your video diary now — it takes one tap, and it's free.</p>
+    <div class="hero-actions">
+      <a class="store-badge" href="https://apps.apple.com/us/app/video-diary/id1606008204" aria-label="Download Video Diary on the App Store">
+        <svg viewBox="0 0 200 60" role="img" aria-hidden="true" focusable="false">
+          <rect x="1" y="1" width="198" height="58" rx="11" fill="#000" stroke="#a6a6a6" stroke-width="1.5"/>
+          <g transform="translate(18 14) scale(2.05)" fill="#fff">
+            <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43m3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422s1.675-2.789 1.698-2.854-.597-.79-1.254-1.157a3.7 3.7 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.091-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56s.625 1.924 1.273 2.796c.576.984 1.34 1.667 1.659 1.899s1.219.386 1.843.067c.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758q.52-1.185.473-1.282"/>
+          </g>
+          <text x="60" y="26" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12">Download on the</text>
+          <text x="60" y="48" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="600">App Store</text>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h3>Video Diary</h3>
+        <p>The simplest video journaling app for iPhone, iPad, Mac, and Apple Vision Pro. Private by design — no AI, no feed, just your story.</p>
+      </div>
+      <div>
+        <h3>Guides</h3>
+        <ul>
+          <li><a href="/guides/how-to-start-a-video-diary.html">Start a video diary</a></li>
+          <li><a href="/guides/benefits-of-video-journaling.html">Benefits of video journaling</a></li>
+          <li><a href="/guides/best-video-diary-app-iphone.html">Best video diary app</a></li>
+          <li><a href="/guides/one-second-a-day-video-journal.html">One second a day</a></li>
+          <li><a href="/guides/video-journal-prompts.html">Video journal prompts</a></li>
+          <li><a href="/guides/private-video-diary.html">Private video diary</a></li>
+          <li><a href="/guides/video-journaling-for-mental-health.html">Mental health</a></li>
+          <li><a href="/guides/how-to-make-a-memory-montage.html">Memory montage</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>App</h3>
+        <ul>
+          <li><a href="https://apps.apple.com/us/app/video-diary/id1606008204">Download on the App Store</a></li>
+          <li><a href="/#how-it-works">How it works</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="https://riccardoios.github.io/life-in-seconds-video-diary">Privacy policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">© 2026 Riccardo Carlotto · Video Journal: Video Diary. Apple, the Apple logo, and App Store are trademarks of Apple Inc.</p>
+  </div>
+</footer>
+
+</body>
+</html>
