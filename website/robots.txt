@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://videodiary.app/sitemap.xml
+Sitemap: https://videodiary.io/sitemap.xml

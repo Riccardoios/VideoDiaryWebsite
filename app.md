@@ -134,7 +134,7 @@ Original URLs (mzstatic; append `/1284x2790bb.png` for full size):
 
 - Unique title (≤60 chars) + meta description (≤160 chars) per page, keyword-leading.
 - One H1 per page containing the target keyword; H2s cover related subqueries.
-- Canonical URLs on `https://videodiary.app`; sitemap.xml + robots.txt.
+- Canonical URLs on `https://videodiary.io`; sitemap.xml + robots.txt.
 - JSON-LD: `SoftwareApplication` + `FAQPage` (home), `Article`/`HowTo` + `BreadcrumbList` (guides).
 - Open Graph + Twitter cards with og-image.
 - Descriptive, keyword-bearing image alt text; explicit width/height; lazy loading below the fold.
