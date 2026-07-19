@@ -8,7 +8,7 @@
 |---|---|
 | Name | Video Journal: Video Diary |
 | Subtitle | Daily video journaling |
-| App Store URL | https://apps.apple.com/us/app/video-diary/id1606008204 |
+| App Store URL | https://apps.apple.com/app/apple-store/id1606008204?pt=121784039&ct=website&mt=8 |
 | App ID | 1606008204 |
 | Developer | Riccardo Carlotto |
 | Category | Lifestyle |
