@@ -470,6 +470,51 @@ article.guide .shot-inline {
 }
 .tip strong { color: var(--ink); }
 
+/* comparison tables — the wrapper is what keeps a wide table off the page edge */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 2rem 0;
+  border: 2.5px solid var(--ink);
+  border-radius: 14px;
+  background: var(--white);
+}
+
+.table-wrap table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 34em;
+  font-size: 0.98rem;
+}
+
+.table-wrap th,
+.table-wrap td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--paper-deep);
+}
+
+.table-wrap thead th {
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  background: var(--paper-deep);
+  border-bottom: 2.5px solid var(--ink);
+}
+
+.table-wrap tbody tr:last-child th,
+.table-wrap tbody tr:last-child td { border-bottom: 0; }
+.table-wrap tbody th { font-weight: 600; }
+
+@media (max-width: 640px) {
+  .table-wrap table { font-size: 0.9rem; }
+  .table-wrap th, .table-wrap td { padding: 0.65rem 0.75rem; }
+}
+
+/* FAQ inside a guide — same accordion as the homepage, article width */
+article.guide .faq { max-width: none; margin: 1.5rem 0 0; }
+article.guide .faq summary { font-size: 1.15rem; }
+
 .app-callout {
   background: var(--paper-deep);
   border: 2.5px solid var(--ink);

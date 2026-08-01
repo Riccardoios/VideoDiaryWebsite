@@ -1,26 +1,31 @@
 # Video Journal: Video Diary — App Listing & SEO Research
 
 > Source of truth for the marketing site. Compiled from the US App Store listing on 2026-07-14.
+> **Listing facts below re-verified 2026-08-01** against the live US listing and the iTunes lookup API. Rating, version, subtitle and prices all drifted in three weeks — re-check them before quoting any of them in an article.
 
 ## App identity
 
-| Field | Value |
-|---|---|
-| Name | Video Journal: Video Diary |
-| Subtitle | Daily video journaling |
-| App Store URL | https://apps.apple.com/app/apple-store/id1606008204?pt=121784039&ct=website&mt=8 |
-| App ID | 1606008204 |
-| Developer | Riccardo Carlotto |
-| Category | Lifestyle |
-| Price | Free (with optional Premium subscription) |
-| Rating | 4.5 ★ (24 ratings, US storefront) |
-| Age rating | 4+ |
-| Current version | 2.21 (released 2026-06-18 — "Small UX fixes - Bug fixing") |
-| First released | 2022-01-22 |
-| Size | ~102 MB |
-| Compatibility | iOS 17.6+, macOS 14.6+ (Apple Silicon), visionOS 1.3+ |
-| Languages | English, French, German, Italian, Japanese, Simplified Chinese, Spanish |
-| Privacy policy | https://riccardoios.github.io/life-in-seconds-video-diary |
+| Field | Value | Verified |
+|---|---|---|
+| Name | Video Journal: Video Diary | 2026-08-01 |
+| Subtitle | Daily Movie Diary & Journal | 2026-08-01 |
+| App Store URL | https://apps.apple.com/app/apple-store/id1606008204?pt=121784039&ct=website&mt=8 | — |
+| App ID | 1606008204 | — |
+| Developer | Riccardo Carlotto | — |
+| Category | Lifestyle (secondary: Photo & Video) | 2026-08-01 |
+| Price | Free (with optional Premium subscription) | 2026-08-01 |
+| Rating | 4.5 ★ (25 ratings, US storefront) | 2026-08-01 |
+| Age rating | 4+ | 2026-07-14 |
+| Current version | 2.22 (released 2026-07-21) | 2026-08-01 |
+| First released | 2022-01-22 | — |
+| Size | ~102 MB | 2026-07-14 |
+| Compatibility | iPhone (iOS 17.6+), Apple Silicon Mac (macOS 14.6+), Apple Vision Pro (visionOS 1.3+) | 2026-08-01 |
+| Languages | English, French, German, Italian, Japanese, Simplified Chinese, Spanish | 2026-08-01 |
+| Privacy policy | https://riccardoios.github.io/life-in-seconds-video-diary | — |
+
+**Not an iPad app.** It is an iPhone app that iPad can run scaled, so it must not be marketed as an iPad app. The iTunes lookup API lists iPad models in `supportedDevices`, which is what compatibility-mode support looks like in that field — don't read it as native iPad support.
+
+**Ratings caveat:** 25 ratings is a small base. Quote the 4.5 ★ figure if the page shows it, but never dress it up as broad social proof ("loved by thousands" etc.).
 
 ## Description (verbatim, US listing)
 
@@ -53,12 +58,18 @@
 
 ## In-app purchases
 
-| Product | Price (IT storefront, EUR) |
-|---|---|
-| Weekly Premium | €3.99 |
-| Monthly Premium | €3.99 |
-| Yearly Premium | €26.99 |
-| Exclusive Offer | €20.99 |
+**Different storefronts sell different products.** The App Store product page lists every IAP configured for the app regardless of whether that storefront's paywall offers it, which is why the raw listing looks self-contradictory (a weekly that costs more than a monthly). What is actually on sale:
+
+| Product | US | IT |
+|---|---|---|
+| Weekly Premium | $6.99 | not sold |
+| Monthly Premium | not sold | €3.99 |
+| Yearly Premium | $44.99 | €26.99 |
+| Exclusive Offer | $26.99 | €20.99 |
+
+*US column verified 2026-08-01; IT column 2026-07-14.*
+
+**Rule for articles: never quote a price without naming the storefront, and check that the storefront actually sells that product first.** Writing "$5.99/month" for a US reader who can only buy weekly or yearly is a factual error about our own product, and it is the easiest kind to make from a listing dump.
 
 ## Screenshots (US listing)
 
