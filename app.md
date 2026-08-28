@@ -14,9 +14,9 @@
 | Developer | Riccardo Carlotto | — |
 | Category | Lifestyle (secondary: Photo & Video) | 2026-08-01 |
 | Price | Free (with optional Premium subscription) | 2026-08-01 |
-| Rating | 4.5 ★ (25 ratings, US storefront) | 2026-08-01 |
+| Rating | 4.5 ★ (30 ratings, US storefront) | 2026-08-28 |
 | Age rating | 4+ | 2026-07-14 |
-| Current version | 2.22 (released 2026-07-21) | 2026-08-01 |
+| Current version | 2.24 (released 2026-08-21) | 2026-08-28 |
 | First released | 2022-01-22 | — |
 | Size | ~102 MB | 2026-07-14 |
 | Compatibility | iPhone (iOS 17.6+), Apple Silicon Mac (macOS 14.6+), Apple Vision Pro (visionOS 1.3+) | 2026-08-01 |
@@ -25,7 +25,7 @@
 
 **Not an iPad app.** It is an iPhone app that iPad can run scaled, so it must not be marketed as an iPad app. The iTunes lookup API lists iPad models in `supportedDevices`, which is what compatibility-mode support looks like in that field — don't read it as native iPad support.
 
-**Ratings caveat:** 25 ratings is a small base. Quote the 4.5 ★ figure if the page shows it, but never dress it up as broad social proof ("loved by thousands" etc.).
+**Ratings caveat:** 30 ratings is a small base. Quote the 4.5 ★ figure if the page shows it, but never dress it up as broad social proof ("loved by thousands" etc.).
 
 ## Description (verbatim, US listing)
 
@@ -133,6 +133,7 @@ Original URLs (mzstatic; append `/1284x2790bb.png` for full size):
 | 6 | `guides/private-video-diary.html` | private video diary | is video journaling private, video diary with Face ID | Privacy-anxious, high conversion |
 | 7 | `guides/video-journaling-for-mental-health.html` | video journaling for mental health | video diary therapy, video journaling for anxiety self reflection | Wellness seeker |
 | 8 | `guides/how-to-make-a-memory-montage.html` | how to make a memory montage | turn videos into a movie of memories, year in review video | Wants the montage outcome |
+| 9 | `guides/1-second-everyday-alternatives.html` | 1 second everyday alternatives | apps like 1 second everyday, 1SE alternative free | Using 1SE, dissatisfied with paywall/clip limit |
 
 ## SERP competitors observed
 
