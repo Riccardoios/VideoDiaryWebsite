@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>Video Diary — brag</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Patrick Hand";
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url("assets/fonts/PatrickHand-Regular.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: block;
+        src: url("assets/fonts/Inter-Variable.woff2") format("woff2");
+      }
+
+      :root {
+        --paper: #f6f4ec;
+        --paper-deep: #ddd9cf;
+        --screen-bg: #dddace;
+        --ink: #191919;
+        --ink-soft: #444036;
+        --periwinkle: #8894e3;
+        --periwinkle-deep: #5f6cc9;
+        --brown: #8b5e3c;
+        --red: #e8271b;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #f6f4ec;
+      }
+
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        font-family: "Inter", sans-serif;
+        color: #191919;
+      }
+
+      /* ---------- persistent paper background ---------- */
+
+      #paper {
+        position: absolute;
+        inset: 0;
+        background: #f6f4ec;
+      }
+
+      #grain {
+        position: absolute;
+        inset: 0;
+        opacity: 0.5;
+        mix-blend-mode: multiply;
+      }
+
+      #vignette {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 76% 74% at 50% 46%,
+          rgba(246, 244, 236, 0) 0%,
+          rgba(221, 217, 207, 0.55) 78%,
+          rgba(210, 205, 192, 0.8) 100%
+        );
+      }
+
+      /* ---------- shared clip box ---------- */
+
+      .clip {
+        position: absolute;
+        inset: 0;
+        width: 1920px;
+        height: 1080px;
+      }
+
+      .center-col {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hand {
+        font-family: "Patrick Hand", sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        line-height: 1.12;
+      }
+
+      /* ---------- scene 1: the AI card ---------- */
+
+      #ai-card {
+        position: absolute;
+        left: 50%;
+        top: 372px;
+        width: 1020px;
+        margin-left: -510px;
+        background: #ffffff;
+        border-radius: 30px;
+        padding: 42px 52px 46px;
+        box-shadow:
+          0 26px 60px rgba(25, 25, 25, 0.13),
+          0 2px 0 rgba(25, 25, 25, 0.04);
+        display: block;
+      }
+
+      #ai-head {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 26px;
+      }
+
+      #ai-avatar {
+        width: 62px;
+        height: 62px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #a99cf0 0%, #7c8ce6 55%, #6f7fe0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+      }
+
+      #ai-name {
+        font-size: 27px;
+        font-weight: 600;
+        color: #3d4351;
+        letter-spacing: 0.005em;
+      }
+
+      #ai-tag {
+        font-size: 23px;
+        font-weight: 500;
+        color: #ffffff;
+        background: #5f6cc9;
+        border-radius: 999px;
+        padding: 6px 17px;
+        letter-spacing: 0.02em;
+      }
+
+      #ai-line {
+        font-size: 54px;
+        font-weight: 400;
+        color: #4c5361;
+        line-height: 1.28;
+        min-height: 72px;
+        letter-spacing: -0.005em;
+      }
+
+      #ai-caret {
+        display: inline-block;
+        width: 4px;
+        height: 50px;
+        background: #9aa2b4;
+        vertical-align: -8px;
+        margin-left: 6px;
+      }
+
+      #ai-slash {
+        position: absolute;
+        left: 50%;
+        top: 340px;
+        width: 1120px;
+        height: 380px;
+        margin-left: -560px;
+        overflow: visible;
+      }
+
+      #no-thanks {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 424px;
+        text-align: center;
+        font-size: 178px;
+        color: #191919;
+      }
+
+      #no-underline {
+        position: absolute;
+        left: 50%;
+        top: 616px;
+        width: 620px;
+        height: 60px;
+        margin-left: -310px;
+        overflow: visible;
+      }
+
+      /* ---------- scene 2: the reveal ---------- */
+
+      #s2-lockup {
+        display: flex;
+        align-items: center;
+        gap: 46px;
+      }
+
+      .app-icon {
+        display: block;
+        border-radius: 22%;
+        box-shadow: 0 16px 38px rgba(25, 25, 25, 0.18);
+      }
+
+      #s2-icon {
+        width: 178px;
+        height: 178px;
+      }
+
+      #s2-word {
+        font-size: 158px;
+        color: #191919;
+      }
+
+      #s2-sub {
+        margin-top: 44px;
+        font-size: 74px;
+        color: #444036;
+        text-align: center;
+      }
+
+      /* ---------- scenes 3-5: the stage ---------- */
+
+      #stage-copy {
+        position: absolute;
+        left: 152px;
+        top: 0;
+        width: 812px;
+        height: 1080px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .copy-slot {
+        position: absolute;
+        left: 0;
+        width: 812px;
+        top: 372px;
+      }
+
+      .copy-kicker {
+        display: block;
+        font-family: "Inter", sans-serif;
+        font-size: 27px;
+        font-weight: 600;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+        color: #5f6cc9;
+        margin-bottom: 26px;
+      }
+
+      .copy-line {
+        display: block;
+        font-size: 98px;
+        color: #191919;
+      }
+
+      .copy-rule {
+        display: block;
+        width: 470px;
+        height: 22px;
+        margin-top: 34px;
+        overflow: visible;
+      }
+
+      #phone {
+        position: absolute;
+        left: 1206px;
+        top: 32px;
+        width: 548px;
+        height: 1015px;
+      }
+
+      #phone-body {
+        position: absolute;
+        inset: 0;
+        background: #1b1b1b;
+        border-radius: 62px;
+        box-shadow:
+          0 34px 70px rgba(25, 25, 25, 0.3),
+          0 4px 10px rgba(25, 25, 25, 0.2);
+      }
+
+      #phone-screen {
+        position: absolute;
+        left: 24px;
+        top: 16px;
+        width: 500px;
+        height: 983px;
+        border-radius: 44px;
+        overflow: hidden;
+        background: #dddace;
+      }
+
+      .screen-img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 500px;
+        height: 983px;
+        display: block;
+      }
+
+      /* scene 3 overlays */
+
+      #rec-ripple {
+        position: absolute;
+        left: 63%;
+        top: 73.7%;
+        width: 150px;
+        height: 150px;
+        margin-left: -75px;
+        margin-top: -75px;
+        border: 5px solid rgba(232, 39, 27, 0.85);
+        border-radius: 50%;
+      }
+
+      #rec-frame {
+        position: absolute;
+        inset: 0;
+        border: 8px solid #e8271b;
+        border-radius: 44px;
+      }
+
+      #rec-badge {
+        position: absolute;
+        left: 50%;
+        top: 3.2%;
+        margin-left: -78px;
+        width: 156px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 11px;
+        background: rgba(25, 25, 25, 0.86);
+        border-radius: 999px;
+        padding: 9px 0;
+      }
+
+      #rec-dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #e8271b;
+      }
+
+      #rec-time {
+        font-family: "Inter", sans-serif;
+        font-size: 27px;
+        font-weight: 600;
+        color: #fffdf7;
+        letter-spacing: 0.04em;
+      }
+
+      /* scene 4 overlays: day-cell masks */
+
+      .day-mask {
+        position: absolute;
+        background: #dddace;
+        border-top: 4px solid #8894e3;
+        display: flex;
+        align-items: flex-end;
+        padding: 0 0 7px 9px;
+      }
+
+
+      #mask-1 { left: 0.81%;  top: 42.92%; width: 25.2%; height: 12.30%; }
+      #mask-2 { left: 51.60%; top: 42.92%; width: 23.5%; height: 12.30%; }
+      #mask-3 { left: 26.70%; top: 55.70%; width: 24.2%; height: 12.25%; }
+      #mask-4 { left: 75.80%; top: 55.70%; width: 23.5%; height: 12.25%; }
+      #mask-5 { left: 26.70%; top: 68.42%; width: 24.2%; height: 12.25%; }
+
+      .day-num {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 27px;
+        color: #805637;
+        letter-spacing: -0.01em;
+      }
+
+      .day-dow {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        color: #805637;
+        margin-left: 5px;
+        margin-bottom: 3px;
+      }
+
+      /* scene 5 overlays: montage tile */
+
+      #pct-mask {
+        position: absolute;
+        left: 7.5%;
+        top: 30.2%;
+        width: 21%;
+        height: 5.4%;
+        background: #dddace;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+      }
+
+      #pct-text {
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 23px;
+        color: #805637;
+        letter-spacing: -0.01em;
+        line-height: 1;
+      }
+
+      #pct-label {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+        white-space: nowrap;
+        color: #805637;
+        letter-spacing: 0;
+        line-height: 1;
+      }
+
+      #tile-glow {
+        position: absolute;
+        left: 3.6%;
+        top: 21.8%;
+        width: 28.4%;
+        height: 14.8%;
+        border-radius: 18px;
+        box-shadow: 0 0 0 4px rgba(136, 148, 227, 0.95);
+      }
+
+      #tile-tick {
+        position: absolute;
+        left: 22.4%;
+        top: 23.6%;
+        width: 7%;
+        height: 3.6%;
+        overflow: visible;
+      }
+
+      #tap-dot {
+        position: absolute;
+        width: 96px;
+        height: 96px;
+        margin-left: -48px;
+        margin-top: -48px;
+        border: 4px solid rgba(95, 108, 201, 0.9);
+        border-radius: 50%;
+        left: 80.5%;
+        top: 2.6%;
+      }
+
+      /* ---------- scene 6: outro ---------- */
+
+      #s6-lockup {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+
+      #s6-icon {
+        width: 148px;
+        height: 148px;
+      }
+
+      #s6-word {
+        font-size: 128px;
+        color: #191919;
+      }
+
+      #s6-tag {
+        margin-top: 36px;
+        font-size: 86px;
+        color: #444036;
+        text-align: center;
+      }
+
+      #s6-cta {
+        margin-top: 58px;
+        display: flex;
+        align-items: center;
+        gap: 34px;
+      }
+
+      #s6-badge {
+        display: block;
+        width: 268px;
+        height: 80px;
+      }
+
+      #s6-meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-family: "Inter", sans-serif;
+        font-size: 31px;
+        font-weight: 600;
+        color: #444036;
+        letter-spacing: 0.01em;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-6zcb" id="root" data-composition-id="main" data-start="0" data-duration="22.7" data-width="1920" data-height="1080" data-fps="30">
+      <!-- persistent paper background (untimed: needs its own absolute box) -->
+      <div data-hf-id="hf-e7mx" id="paper">
+        <svg data-hf-id="hf-y11m" id="grain" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true">
+          <filter data-hf-id="hf-26fg" id="grain-filter">
+            <feturbulence data-hf-id="hf-fqfq" type="fractalNoise" baseFrequency="0.86" numOctaves="3" seed="7" />
+            <fecolormatrix data-hf-id="hf-l0su" type="matrix" values="0 0 0 0 0.82 0 0 0 0 0.81 0 0 0 0 0.76 0 0 0 0.13 0" />
+          </filter>
+          <rect data-hf-id="hf-23te" width="1920" height="1080" filter="url(#grain-filter)" />
+        </svg>
+        <div data-hf-id="hf-h7i3" id="vignette"></div>
+      </div>
+
+      <!-- ============ SCENE 1 — the AI card ============ -->
+      <section data-hf-id="hf-gz1b" id="s1" class="clip" data-start="0" data-duration="4.23" data-track-index="0">
+        <div data-hf-id="hf-rxgy" id="ai-card" data-layout-allow-overlap="true">
+          <div data-hf-id="hf-blii" id="ai-head">
+            <div data-hf-id="hf-vi4v" id="ai-avatar">
+              <svg data-hf-id="hf-bg8n" width="30" height="30" viewBox="0 0 24 24" aria-hidden="true">
+                <path data-hf-id="hf-sloa" d="M12 1.6l1.9 5.6 5.6 1.9-5.6 1.9L12 16.6l-1.9-5.6L4.5 9.1l5.6-1.9z" fill="#ffffff" />
+                <path data-hf-id="hf-942o" d="M19 14.4l.95 2.8 2.8.95-2.8.95-.95 2.8-.95-2.8-2.8-.95 2.8-.95z" fill="#ffffff" />
+              </svg>
+            </div>
+            <span data-hf-id="hf-pqeb" id="ai-name">Journal Assistant</span>
+            <span data-hf-id="hf-n4i9" id="ai-tag">AI</span>
+          </div>
+          <p data-hf-id="hf-lmvd" id="ai-line"><span data-hf-id="hf-mp83" id="ai-typed"></span><span data-hf-id="hf-89pm" id="ai-caret"></span></p>
+        </div>
+
+        <svg data-hf-id="hf-f277" id="ai-slash" viewBox="0 0 1120 380" fill="none" aria-hidden="true">
+          <path data-hf-id="hf-c5g1" id="slash-a" d="M62 318 C 300 250, 520 150, 742 78 C 830 50, 940 34, 1046 46" stroke="#e8271b" stroke-width="17" stroke-linecap="round" />
+          <path data-hf-id="hf-jb8p" id="slash-b" d="M96 72 C 330 138, 560 212, 786 282 C 872 308, 968 326, 1052 320" stroke="#e8271b" stroke-width="14" stroke-linecap="round" />
+        </svg>
+
+        <h1 data-hf-id="hf-g382" id="no-thanks" class="hand">No thanks.</h1>
+        <svg data-hf-id="hf-fh56" id="no-underline" viewBox="0 0 620 60" fill="none" aria-hidden="true">
+          <path data-hf-id="hf-92w5" id="underline-path" d="M14 36 C 150 14, 330 12, 468 24 C 530 30, 578 38, 604 46" stroke="#e8271b" stroke-width="12" stroke-linecap="round" />
+        </svg>
+      </section>
+
+      <!-- ============ SCENE 2 — the reveal ============ -->
+      <section data-hf-id="hf-9y4q" id="s2" class="clip" data-start="4.23" data-duration="3.17" data-track-index="1">
+        <div data-hf-id="hf-fmui" class="center-col">
+          <div data-hf-id="hf-mgyl" id="s2-lockup">
+            <img data-hf-id="hf-754m" id="s2-icon" class="app-icon" src="assets/img/app-icon.png" width="178" height="178" alt="Video Diary app icon">
+            <span data-hf-id="hf-sr8s" id="s2-word" class="hand">Video Diary</span>
+          </div>
+          <p data-hf-id="hf-kzgt" id="s2-sub" class="hand">Journaling with videos. Nothing else.</p>
+        </div>
+      </section>
+
+      <!-- ============ SCENES 3-5 — the phone stage ============ -->
+      <section data-hf-id="hf-0jml" id="stage" class="clip" data-start="7.4" data-duration="11.04" data-track-index="2">
+        <div data-hf-id="hf-bg79" id="stage-copy">
+          <div data-hf-id="hf-seyh" class="copy-slot" id="copy-3">
+            <span data-hf-id="hf-rkt1" class="copy-kicker">Record</span>
+            <span data-hf-id="hf-h7mr" class="copy-line hand">Open. Tap REC. Done.</span>
+            <svg data-hf-id="hf-u2ws" class="copy-rule" viewBox="0 0 470 22" fill="none" aria-hidden="true">
+              <path data-hf-id="hf-3tng" class="rule-path" d="M8 15 C 120 6, 300 5, 462 11" stroke="#8894e3" stroke-width="9" stroke-linecap="round" />
+            </svg>
+          </div>
+
+          <div data-hf-id="hf-jr2m" class="copy-slot" id="copy-4">
+            <span data-hf-id="hf-narv" class="copy-kicker">Relive</span>
+            <span data-hf-id="hf-9yo3" class="copy-line hand">Every day lands on your calendar.</span>
+            <svg data-hf-id="hf-zdf8" class="copy-rule" viewBox="0 0 470 22" fill="none" aria-hidden="true">
+              <path data-hf-id="hf-5w44" class="rule-path" d="M8 15 C 120 6, 300 5, 462 11" stroke="#8894e3" stroke-width="9" stroke-linecap="round" />
+            </svg>
+          </div>
+
+          <div data-hf-id="hf-np6n" class="copy-slot" id="copy-5">
+            <span data-hf-id="hf-aki5" class="copy-kicker">Montage</span>
+            <span data-hf-id="hf-tfc0" class="copy-line hand">One tap turns them into a movie.</span>
+            <svg data-hf-id="hf-y6i5" class="copy-rule" viewBox="0 0 470 22" fill="none" aria-hidden="true">
+              <path data-hf-id="hf-4p71" class="rule-path" d="M8 15 C 120 6, 300 5, 462 11" stroke="#8894e3" stroke-width="9" stroke-linecap="round" />
+            </svg>
+          </div>
+        </div>
+
+        <div data-hf-id="hf-5iuv" id="phone">
+          <div data-hf-id="hf-zi84" id="phone-body"></div>
+          <div data-hf-id="hf-ojuc" id="phone-screen">
+            <img data-hf-id="hf-sk3m" id="img-record" class="screen-img" src="assets/img/screen-record.png" width="500" height="983" alt="Video Diary record screen with the daily prompt and red REC button">
+            <img data-hf-id="hf-i8pp" id="img-calendar" class="screen-img" src="assets/img/screen-calendar.png" width="500" height="983" alt="Video Diary calendar of daily video journal entries">
+            <img data-hf-id="hf-zwwk" id="img-gallery" class="screen-img" src="assets/img/screen-gallery.png" width="500" height="983" alt="Video Diary gallery creating a montage from daily clips">
+
+            <!-- scene 3 overlays -->
+            <div data-hf-id="hf-aeqt" id="rec-frame"></div>
+            <div data-hf-id="hf-li8k" id="rec-ripple"></div>
+            <div data-hf-id="hf-vnvr" id="rec-badge"><span data-hf-id="hf-xaai" id="rec-dot"></span><span data-hf-id="hf-v840" id="rec-time">0:00</span></div>
+
+            <!-- scene 4 overlays -->
+            <div data-hf-id="hf-5lob" class="day-mask" id="mask-1">
+              <span data-hf-id="hf-7udp" class="day-num">1</span><span data-hf-id="hf-8rz0" class="day-dow">Wed</span>
+            </div>
+            <div data-hf-id="hf-uq6o" class="day-mask" id="mask-2">
+              <span data-hf-id="hf-8mzr" class="day-num">3</span><span data-hf-id="hf-8i5n" class="day-dow">Fri</span>
+            </div>
+            <div data-hf-id="hf-vhuh" class="day-mask" id="mask-3">
+              <span data-hf-id="hf-amiw" class="day-num">6</span><span data-hf-id="hf-4ohe" class="day-dow">Mon</span>
+            </div>
+            <div data-hf-id="hf-mtym" class="day-mask" id="mask-4">
+              <span data-hf-id="hf-bf4y" class="day-num">8</span><span data-hf-id="hf-m8b8" class="day-dow">Wed</span>
+            </div>
+            <div data-hf-id="hf-qs2n" class="day-mask" id="mask-5">
+              <span data-hf-id="hf-rjpj" class="day-num">10</span><span data-hf-id="hf-36iz" class="day-dow">Fri</span>
+            </div>
+
+            <!-- scene 5 overlays -->
+            <div data-hf-id="hf-li57" id="pct-mask"><span data-hf-id="hf-lc6a" id="pct-text">0%</span><span data-hf-id="hf-fa68" id="pct-label">Creating Montage</span></div>
+            <div data-hf-id="hf-9v79" id="tile-glow"></div>
+            <svg data-hf-id="hf-mvyu" id="tile-tick" viewBox="0 0 100 50" fill="none" aria-hidden="true">
+              <path data-hf-id="hf-6u0e" id="tick-path" d="M10 27 L 36 45 L 90 6" stroke="#5f6cc9" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div data-hf-id="hf-qa32" id="tap-dot"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SCENE 6 — outro ============ -->
+      <section data-hf-id="hf-zkzr" id="s6" class="clip" data-start="18.44" data-duration="4.26" data-track-index="3">
+        <div data-hf-id="hf-aywe" class="center-col">
+          <div data-hf-id="hf-w38x" id="s6-lockup">
+            <img data-hf-id="hf-45x6" id="s6-icon" class="app-icon" src="assets/img/app-icon-outro.png" width="148" height="148" alt="Video Diary app icon">
+            <span data-hf-id="hf-kquw" id="s6-word" class="hand">Video Diary</span>
+          </div>
+          <p data-hf-id="hf-n177" id="s6-tag" class="hand">Your life, one video at a time.</p>
+          <div data-hf-id="hf-olt3" id="s6-cta">
+            <svg data-hf-id="hf-upt3" id="s6-badge" viewBox="0 0 200 60" aria-label="Download on the App Store">
+              <rect data-hf-id="hf-iuxh" x="1" y="1" width="198" height="58" rx="11" fill="#111111" />
+              <g data-hf-id="hf-trp2" transform="translate(18 14) scale(2.05)" fill="#ffffff">
+                <path data-hf-id="hf-30i1" d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43m3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422s1.675-2.789 1.698-2.854-.597-.79-1.254-1.157a3.7 3.7 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.091-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56s.625 1.924 1.273 2.796c.576.984 1.34 1.667 1.659 1.899s1.219.386 1.843.067c.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758q.52-1.185.473-1.282" />
+              </g>
+              <text data-hf-id="hf-hdz0" x="60" y="26" fill="#ffffff" font-family="Inter, sans-serif" font-size="12" font-weight="500">
+                Download on the
+              </text>
+              <text data-hf-id="hf-pvy7" x="60" y="48" fill="#ffffff" font-family="Inter, sans-serif" font-size="21" font-weight="600">
+                App Store
+              </text>
+            </svg>
+            <span data-hf-id="hf-jimp" id="s6-meta">
+              <span data-hf-id="hf-yh5b">Free</span>
+              <span data-hf-id="hf-1bmq">·</span>
+              <span data-hf-id="hf-oh4i">4.5</span>
+              <svg data-hf-id="hf-tjav" width="30" height="30" viewBox="0 0 24 24" aria-hidden="true">
+                <path data-hf-id="hf-06d1" d="M12 2.4l2.9 5.9 6.5.95-4.7 4.6 1.11 6.47L12 17.27l-5.81 3.05L7.3 13.85l-4.7-4.6 6.5-.95z" fill="#444036" />
+              </svg>
+              <span data-hf-id="hf-de9x">on the App Store</span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ AUDIO ============ -->
+      <audio data-hf-id="hf-pjdi" id="music-bed" src="assets/music/happy-beats-business-moves-vol-9-by-ende-dot-app.mp3" data-start="0" data-duration="22.7" data-track-index="10" data-volume="0.34" data-automation="{&quot;version&quot;:1,&quot;lanes&quot;:[{&quot;target&quot;:&quot;volume&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0},{&quot;t&quot;:0.6,&quot;v&quot;:0.28},{&quot;t&quot;:4.2,&quot;v&quot;:0.28},{&quot;t&quot;:4.6,&quot;v&quot;:0.34},{&quot;t&quot;:21.7,&quot;v&quot;:0.34},{&quot;t&quot;:22.7,&quot;v&quot;:0}]}]}"></audio>
+
+      <audio data-hf-id="hf-dzzj" id="key-1" src="assets/sfx/keyboard/keypress-003.wav" data-start="0.52" data-duration="0.25" data-track-index="11" data-volume="0.3"></audio>
+      <audio data-hf-id="hf-9l29" id="key-2" src="assets/sfx/keyboard/keypress-012.wav" data-start="0.64" data-duration="0.25" data-track-index="12" data-volume="0.28"></audio>
+      <audio data-hf-id="hf-on54" id="key-3" src="assets/sfx/keyboard/keypress-024.wav" data-start="0.77" data-duration="0.25" data-track-index="13" data-volume="0.31"></audio>
+      <audio data-hf-id="hf-v2mh" id="key-4" src="assets/sfx/keyboard/keypress-007.wav" data-start="0.89" data-duration="0.25" data-track-index="14" data-volume="0.27"></audio>
+      <audio data-hf-id="hf-cvnk" id="key-5" src="assets/sfx/keyboard/keypress-029.wav" data-start="1.01" data-duration="0.25" data-track-index="15" data-volume="0.3"></audio>
+      <audio data-hf-id="hf-8zql" id="key-6" src="assets/sfx/keyboard/keypress-018.wav" data-start="1.13" data-duration="0.25" data-track-index="16" data-volume="0.29"></audio>
+      <audio data-hf-id="hf-3qvx" id="key-7" src="assets/sfx/keyboard/keypress-003.wav" data-start="1.25" data-duration="0.25" data-track-index="17" data-volume="0.28"></audio>
+      <audio data-hf-id="hf-3x34" id="key-8" src="assets/sfx/keyboard/keypress-024.wav" data-start="1.37" data-duration="0.25" data-track-index="18" data-volume="0.3"></audio>
+      <audio data-hf-id="hf-yokv" id="key-9" src="assets/sfx/keyboard/keypress-012.wav" data-start="1.49" data-duration="0.25" data-track-index="19" data-volume="0.26"></audio>
+
+      <!-- scribble kills the AI card -->
+      <audio data-hf-id="hf-6aq1" id="sfx-slash" src="assets/sfx/impact/impactSoft_medium_001.ogg" data-start="2.12" data-duration="0.18" data-track-index="20" data-volume="0.72"></audio>
+      <!-- wordmark reveal (beat-locked 4.23) -->
+      <audio data-hf-id="hf-7aid" id="sfx-word" src="assets/sfx/impact/impactSoft_medium_000.ogg" data-start="4.23" data-duration="0.11" data-track-index="21" data-volume="0.5"></audio>
+      <!-- REC tap (beat-locked 8.44) -->
+      <audio data-hf-id="hf-yuqj" id="sfx-rec" src="assets/sfx/interface/click_001.ogg" data-start="8.44" data-duration="0.1" data-track-index="22" data-volume="0.8"></audio>
+      <!-- calendar cells 1, 3, 5 only (beat-grid) -->
+      <audio data-hf-id="hf-vuj7" id="sfx-cell-1" src="assets/sfx/casino/card-slide-1.ogg" data-start="11.6" data-duration="0.6" data-track-index="23" data-volume="0.42"></audio>
+      <audio data-hf-id="hf-ghoq" id="sfx-cell-3" src="assets/sfx/casino/card-slide-2.ogg" data-start="12.65" data-duration="0.58" data-track-index="24" data-volume="0.42"></audio>
+      <audio data-hf-id="hf-x5lc" id="sfx-cell-5" src="assets/sfx/casino/card-slide-4.ogg" data-start="13.7" data-duration="0.45" data-track-index="25" data-volume="0.42"></audio>
+      <!-- Create Montage tap -->
+      <audio data-hf-id="hf-6xsb" id="sfx-tap" src="assets/sfx/ui/click2.ogg" data-start="15.28" data-duration="0.055" data-track-index="26" data-volume="0.72"></audio>
+      <!-- montage complete -->
+      <audio data-hf-id="hf-3k0b" id="sfx-done" src="assets/sfx/impact/impactBell_heavy_000.ogg" data-start="17.38" data-duration="1.47" data-track-index="27" data-volume="0.55"></audio>
+      <!-- badge lands (beat-locked 20.53) -->
+      <audio data-hf-id="hf-ojrw" id="sfx-badge" src="assets/sfx/impact/impactSoft_medium_002.ogg" data-start="20.53" data-duration="0.13" data-track-index="28" data-volume="0.45"></audio>
+    </div>
+
+    <script>
+      /* ------------------------------------------------------------------
+         Pre-extracted audio data (hyperframes-creative extract-audio-data.py,
+         30fps / 16 bands, trimmed to 23s, normalised). Used only for subtle
+         breathing on the paper vignette, the phone shadow and the wordmark.
+         ------------------------------------------------------------------ */
+var AUDIO_FPS=30;
+var AUDIO_BASS=[0.626,0.45,0.29,0.239,0.237,0.232,0.235,0.226,0.223,0.219,0.219,0.211,0.226,0.22,0.213,0.311,0.772,0.402,0.158,0.187,0.203,0.192,0.202,0.203,0.191,0.193,0.188,0.184,0.184,0.171,0.156,0.266,0.675,0.29,0.114,0.131,0.127,0.139,0.134,0.138,0.139,0.14,0.143,0.148,0.143,0.143,0.145,0.422,0.667,0.235,0.12,0.109,0.115,0.117,0.121,0.116,0.115,0.123,0.122,0.136,0.128,0.091,0.074,0.521,0.491,0.257,0.228,0.227,0.216,0.208,0.206,0.193,0.168,0.157,0.155,0.152,0.137,0.134,0.179,0.741,0.565,0.189,0.097,0.094,0.085,0.075,0.076,0.074,0.067,0.063,0.063,0.064,0.061,0.059,0.215,0.757,0.367,0.083,0.051,0.054,0.054,0.053,0.05,0.054,0.049,0.044,0.049,0.045,0.04,0.039,0.343,0.76,0.266,0.046,0.04,0.046,0.05,0.053,0.058,0.064,0.066,0.069,0.073,0.073,0.068,0.047,0.506,0.652,0.356,0.326,0.288,0.289,0.277,0.281,0.284,0.263,0.25,0.244,0.245,0.234,0.235,0.249,0.596,0.624,0.264,0.172,0.213,0.198,0.208,0.245,0.257,0.213,0.2,0.2,0.194,0.186,0.177,0.196,0.747,0.472,0.169,0.151,0.155,0.151,0.163,0.158,0.165,0.154,0.15,0.148,0.152,0.15,0.155,0.29,0.74,0.334,0.177,0.116,0.126,0.119,0.116,0.106,0.11,0.104,0.102,0.107,0.1,0.08,0.032,0.406,0.905,0.412,0.303,0.314,0.312,0.327,0.322,0.32,0.303,0.286,0.276,0.274,0.268,0.276,0.261,0.615,0.671,0.191,0.195,0.217,0.212,0.213,0.212,0.211,0.208,0.197,0.196,0.193,0.176,0.171,0.187,0.629,0.445,0.144,0.123,0.129,0.131,0.134,0.141,0.138,0.127,0.124,0.126,0.124,0.115,0.114,0.167,0.704,0.391,0.117,0.08,0.083,0.085,0.085,0.088,0.082,0.083,0.082,0.084,0.079,0.067,0.038,0.268,0.807,0.416,0.219,0.194,0.212,0.215,0.204,0.202,0.198,0.2,0.192,0.191,0.189,0.186,0.191,0.471,0.816,0.267,0.172,0.166,0.189,0.174,0.174,0.177,0.171,0.164,0.169,0.184,0.176,0.157,0.178,0.484,0.645,0.191,0.104,0.129,0.131,0.127,0.132,0.142,0.144,0.137,0.137,0.148,0.148,0.158,0.218,0.657,0.457,0.189,0.095,0.102,0.098,0.095,0.092,0.095,0.093,0.1,0.106,0.103,0.103,0.072,0.177,0.922,0.552,0.328,0.324,0.333,0.332,0.323,0.324,0.308,0.291,0.276,0.285,0.269,0.268,0.284,0.366,0.599,0.258,0.229,0.233,0.245,0.244,0.245,0.25,0.249,0.246,0.248,0.239,0.233,0.228,0.221,0.519,0.791,0.331,0.185,0.192,0.205,0.214,0.215,0.224,0.217,0.217,0.221,0.228,0.225,0.216,0.213,0.565,0.512,0.138,0.163,0.185,0.186,0.182,0.183,0.188,0.186,0.184,0.181,0.176,0.166,0.109,0.092,0.834,0.525,0.249,0.239,0.238,0.236,0.237,0.234,0.23,0.21,0.203,0.191,0.185,0.174,0.173,0.283,0.705,0.362,0.187,0.126,0.143,0.134,0.128,0.126,0.126,0.113,0.121,0.114,0.098,0.091,0.087,0.34,0.731,0.324,0.078,0.075,0.077,0.077,0.08,0.077,0.075,0.068,0.073,0.072,0.07,0.071,0.074,0.455,0.64,0.149,0.061,0.051,0.052,0.053,0.053,0.056,0.046,0.045,0.048,0.047,0.041,0.034,0.061,0.58,0.47,0.289,0.382,0.395,0.408,0.435,0.471,0.452,0.378,0.352,0.335,0.332,0.31,0.322,0.255,0.196,0.151,0.148,0.133,0.121,0.107,0.098,0.094,0.083,0.071,0.066,0.057,0.047,0.041,0.037,0.03,0.031,0.025,0.017,0.014,0.01,0.015,0.016,0.011,0.012,0.014,0.012,0.008,0.007,0.006,0.007,0.012,0.012,0.011,0.009,0.016,0.018,0.013,0.025,0.049,0.042,0.026,0.029,0.027,0.027,0.041,0.039,0.599,0.808,0.516,0.481,0.472,0.458,0.453,0.42,0.43,0.413,0.337,0.301,0.328,0.308,0.285,0.277,0.739,0.575,0.412,0.324,0.311,0.322,0.313,0.308,0.298,0.385,0.362,0.329,0.305,0.301,0.287,0.306,0.723,0.631,0.441,0.408,0.411,0.422,0.411,0.397,0.418,0.42,0.38,0.384,0.397,0.363,0.359,0.449,0.724,0.542,0.473,0.451,0.464,0.461,0.438,0.392,0.434,0.453,0.418,0.404,0.407,0.387,0.371,0.423,0.801,0.206,0.263,0.303,0.3,0.3,0.307,0.295,0.492,0.404,0.384,0.379,0.376,0.373,0.343,0.752,0.801,0.236,0.271,0.304,0.304,0.296,0.298,0.303,0.497,0.459,0.446,0.429,0.415,0.404,0.398,0.761,0.475,0.277,0.354,0.389,0.423,0.438,0.398,0.456,0.475,0.404,0.4,0.386,0.375,0.378,0.361,0.818,0.371,0.18,0.223,0.235,0.244,0.245,0.257,0.495,0.507,0.483,0.469,0.463,0.467,0.462,0.5,1.0,0.358,0.298,0.324,0.321,0.33,0.343,0.41,0.336,0.255,0.252,0.258,0.251,0.253,0.249,0.517,0.855,0.36,0.207,0.243,0.235,0.235,0.256,0.379,0.39,0.324,0.337,0.34,0.313,0.311,0.313,0.675,0.764,0.276,0.312,0.311,0.314,0.324,0.336,0.374,0.399,0.333,0.326,0.321,0.318,0.308,0.324,0.798,0.624,0.169,0.139,0.141,0.144,0.133,0.156,0.255,0.249,0.202];
+var AUDIO_RMS=[0.849,0.438,0.272,0.227,0.255,0.227,0.223,0.253,0.394,0.419,0.353,0.267,0.403,0.321,0.258,0.274,0.876,0.346,0.168,0.172,0.394,0.445,0.388,0.353,0.266,0.211,0.199,0.18,0.48,0.386,0.347,0.486,0.752,0.363,0.289,0.21,0.186,0.143,0.122,0.223,0.417,0.369,0.356,0.308,0.263,0.204,0.151,0.684,0.674,0.346,0.278,0.256,0.314,0.241,0.217,0.275,0.453,0.375,0.288,0.232,0.167,0.152,0.119,0.849,0.368,0.32,0.292,0.291,0.301,0.278,0.289,0.425,0.462,0.395,0.306,0.412,0.322,0.28,0.246,0.851,0.456,0.221,0.182,0.388,0.439,0.388,0.299,0.236,0.192,0.143,0.15,0.439,0.377,0.315,0.356,0.877,0.406,0.248,0.212,0.141,0.118,0.098,0.119,0.436,0.356,0.303,0.25,0.195,0.148,0.102,0.597,0.81,0.405,0.361,0.308,0.307,0.229,0.17,0.157,0.131,0.107,0.101,0.122,0.148,0.139,0.117,0.782,0.609,0.484,0.473,0.49,0.482,0.479,0.452,0.508,0.584,0.512,0.444,0.495,0.447,0.431,0.414,0.726,0.512,0.329,0.314,0.395,0.512,0.487,0.483,0.477,0.375,0.319,0.328,0.462,0.476,0.429,0.365,0.924,0.43,0.291,0.306,0.275,0.272,0.258,0.249,0.482,0.435,0.423,0.375,0.342,0.314,0.277,0.39,0.855,0.387,0.353,0.311,0.359,0.317,0.286,0.256,0.439,0.45,0.379,0.305,0.23,0.17,0.106,0.66,0.829,0.438,0.348,0.373,0.417,0.382,0.386,0.48,0.524,0.475,0.421,0.507,0.476,0.437,0.39,0.736,0.563,0.229,0.232,0.4,0.472,0.425,0.357,0.32,0.326,0.303,0.298,0.394,0.446,0.396,0.31,0.819,0.488,0.354,0.368,0.333,0.292,0.259,0.222,0.444,0.389,0.354,0.305,0.268,0.2,0.175,0.166,0.903,0.422,0.289,0.268,0.258,0.241,0.183,0.131,0.411,0.462,0.382,0.3,0.226,0.192,0.168,0.476,0.854,0.336,0.206,0.211,0.281,0.293,0.25,0.225,0.359,0.349,0.305,0.326,0.343,0.259,0.226,0.697,0.687,0.238,0.168,0.17,0.41,0.388,0.355,0.275,0.207,0.159,0.137,0.321,0.45,0.371,0.299,0.819,0.52,0.346,0.22,0.176,0.137,0.125,0.093,0.327,0.394,0.356,0.327,0.281,0.254,0.198,0.212,0.847,0.482,0.295,0.263,0.277,0.264,0.226,0.179,0.359,0.435,0.378,0.282,0.213,0.151,0.142,0.135,1.0,0.513,0.441,0.442,0.429,0.434,0.41,0.416,0.555,0.51,0.464,0.433,0.434,0.375,0.343,0.505,0.638,0.251,0.231,0.272,0.466,0.473,0.396,0.367,0.319,0.268,0.26,0.324,0.484,0.409,0.343,0.717,0.737,0.387,0.32,0.273,0.248,0.231,0.236,0.362,0.442,0.389,0.357,0.329,0.293,0.263,0.232,0.829,0.484,0.388,0.387,0.391,0.345,0.288,0.229,0.236,0.214,0.203,0.194,0.215,0.215,0.177,0.13,0.987,0.379,0.34,0.419,0.4,0.398,0.388,0.389,0.506,0.513,0.471,0.403,0.471,0.388,0.321,0.355,0.78,0.332,0.232,0.21,0.408,0.453,0.42,0.378,0.295,0.243,0.228,0.226,0.471,0.371,0.35,0.545,0.726,0.406,0.317,0.233,0.19,0.162,0.148,0.256,0.438,0.378,0.342,0.302,0.259,0.209,0.164,0.777,0.666,0.331,0.291,0.296,0.323,0.212,0.215,0.247,0.43,0.407,0.319,0.253,0.196,0.16,0.127,0.852,0.385,0.344,0.42,0.456,0.495,0.495,0.573,0.596,0.549,0.526,0.459,0.574,0.55,0.526,0.425,0.275,0.221,0.2,0.188,0.45,0.421,0.361,0.31,0.26,0.224,0.185,0.16,0.346,0.371,0.311,0.373,0.464,0.374,0.352,0.328,0.289,0.24,0.191,0.334,0.444,0.364,0.317,0.259,0.2,0.145,0.115,0.331,0.436,0.389,0.305,0.239,0.203,0.132,0.117,0.169,0.475,0.434,0.35,0.293,0.243,0.152,0.121,0.865,0.536,0.451,0.367,0.379,0.421,0.388,0.376,0.389,0.423,0.371,0.349,0.409,0.417,0.365,0.301,0.883,0.542,0.309,0.293,0.429,0.492,0.422,0.361,0.319,0.313,0.31,0.298,0.483,0.552,0.484,0.418,0.984,0.513,0.476,0.397,0.387,0.356,0.362,0.29,0.439,0.496,0.418,0.415,0.395,0.326,0.287,0.513,0.812,0.564,0.426,0.426,0.461,0.418,0.427,0.296,0.502,0.472,0.45,0.387,0.322,0.32,0.282,0.733,0.711,0.32,0.392,0.413,0.415,0.417,0.417,0.413,0.603,0.549,0.491,0.54,0.524,0.491,0.439,0.886,0.632,0.335,0.373,0.429,0.518,0.535,0.444,0.472,0.576,0.552,0.542,0.596,0.602,0.554,0.533,0.932,0.552,0.504,0.538,0.545,0.583,0.608,0.539,0.584,0.584,0.539,0.515,0.493,0.449,0.436,0.432,0.977,0.488,0.449,0.446,0.457,0.438,0.39,0.376,0.642,0.625,0.601,0.577,0.561,0.573,0.565,0.639,0.968,0.447,0.461,0.53,0.532,0.522,0.554,0.479,0.606,0.548,0.538,0.544,0.529,0.474,0.489,0.743,0.727,0.405,0.353,0.4,0.525,0.514,0.459,0.425,0.562,0.496,0.527,0.61,0.599,0.595,0.513,0.935,0.686,0.439,0.544,0.53,0.527,0.511,0.523,0.52,0.642,0.594,0.6,0.544,0.545,0.513,0.477,0.915,0.571,0.385,0.41,0.416,0.419,0.413,0.349,0.483,0.565,0.477];
+    </script>
+
+    <script>
+      (function () {
+        var tl = gsap.timeline({ paused: true });
+
+        /* =========================================================
+           SCENE 1 — the AI assistant nobody asked for (0.00 → 4.23)
+           ========================================================= */
+
+        var AI_TEXT = "How are you feeling today?";
+        var typed = document.getElementById("ai-typed");
+        var typeState = { n: 0 };
+
+        // Initial states paint immediately (outside the paused timeline) so frame 0 is
+        // correct; every entrance below is a fromTo, so seeking backward restores them.
+        gsap.set("#ai-card", { opacity: 0, y: 34, scale: 0.97 });
+        gsap.set("#no-thanks", { opacity: 0, y: 26, scale: 0.94 });
+        gsap.set("#no-underline", { opacity: 0 });
+        gsap.set("#slash-a", { strokeDasharray: 1200, strokeDashoffset: 1200 });
+        gsap.set("#slash-b", { strokeDasharray: 1200, strokeDashoffset: 1200 });
+        gsap.set("#underline-path", { strokeDasharray: 640, strokeDashoffset: 640 });
+
+        tl.fromTo(
+          "#ai-card",
+          { opacity: 0, y: 34, scale: 0.97 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.42, ease: "power3.out" },
+          0.12,
+        );
+
+        // deterministic per-character typing
+        tl.to(
+          typeState,
+          {
+            n: AI_TEXT.length,
+            duration: 1.08,
+            ease: "none",
+            onUpdate: function () {
+              typed.textContent = AI_TEXT.slice(0, Math.round(typeState.n));
+            },
+          },
+          0.5,
+        );
+        tl.set("#ai-caret", { opacity: 0 }, 1.72);
+
+        // the marker slash — beat-grid: 2.12s
+        tl.fromTo(
+          "#slash-a",
+          { strokeDashoffset: 1200 },
+          { strokeDashoffset: 0, duration: 0.22, ease: "power2.in" },
+          2.12,
+        )
+          .fromTo(
+            "#slash-b",
+            { strokeDashoffset: 1200 },
+            { strokeDashoffset: 0, duration: 0.2, ease: "power2.in" },
+            2.26,
+          )
+          .to(
+            "#ai-card",
+            { rotation: -3.4, y: 78, opacity: 0, duration: 0.42, ease: "power2.in" },
+            2.42,
+          )
+          .to("#ai-slash", { rotation: -2.6, y: 74, opacity: 0, duration: 0.42, ease: "power2.in" }, 2.42);
+
+        // "No thanks." — beat-locked: 2.65s (strongCue 2.65, intensity 0.98)
+        tl.fromTo(
+          "#no-thanks",
+          { opacity: 0, y: 26, scale: 0.94 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.38, ease: "back.out(1.5)" },
+          2.65,
+        )
+          .set("#no-underline", { opacity: 1 }, 2.86)
+          .fromTo(
+            "#underline-path",
+            { strokeDashoffset: 640 },
+            { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" },
+            2.86,
+          )
+          .to("#no-thanks", { opacity: 0, duration: 0.16, ease: "power1.in" }, 4.09)
+          .to("#no-underline", { opacity: 0, duration: 0.16, ease: "power1.in" }, 4.09);
+
+        /* =========================================================
+           SCENE 2 — the reveal (4.23 → 7.40)
+           ========================================================= */
+
+        tl.set("#s2-icon", { opacity: 0, scale: 0.6, rotation: -9 }, 4.23)
+          .set("#s2-word", { opacity: 0, y: 30 }, 4.23)
+          .set("#s2-sub", { opacity: 0, y: 22 }, 4.23);
+
+        // beat-locked: 4.23s (strongCue 4.23, intensity 1.00)
+        tl.to(
+          "#s2-icon",
+          { opacity: 1, scale: 1, rotation: 0, duration: 0.46, ease: "back.out(2)" },
+          4.26,
+        ).to("#s2-word", { opacity: 1, y: 0, duration: 0.42, ease: "power3.out" }, 4.34);
+
+        // beat-locked: 5.28s (strongCue 5.28, intensity 0.99)
+        tl.to("#s2-sub", { opacity: 1, y: 0, duration: 0.42, ease: "power3.out" }, 5.28);
+
+        tl.to("#s2-lockup", { y: -22, opacity: 0, duration: 0.22, ease: "power2.in" }, 7.14).to(
+          "#s2-sub",
+          { y: -22, opacity: 0, duration: 0.22, ease: "power2.in" },
+          7.18,
+        );
+
+        /* =========================================================
+           SCENES 3-5 — the phone stage (7.40 → 18.44)
+           ========================================================= */
+
+        // screens: only one visible at a time, crossfaded on the timeline
+        tl.set("#img-record", { opacity: 1 }, 7.4)
+          .set("#img-calendar", { opacity: 0 }, 7.4)
+          .set("#img-gallery", { opacity: 0 }, 7.4);
+
+        // all overlays start hidden
+        tl.set("#rec-frame", { opacity: 0 }, 7.4)
+          .set("#rec-ripple", { opacity: 0, scale: 1 }, 7.4)
+          .set("#rec-badge", { opacity: 0, y: -18 }, 7.4)
+          .set(".day-mask", { opacity: 0, scale: 1, y: 0 }, 7.4)
+          .set("#pct-mask", { opacity: 0 }, 7.4)
+          .set("#tile-glow", { opacity: 0 }, 7.4)
+          .set("#tile-tick", { opacity: 0 }, 7.4)
+          .set("#tap-dot", { opacity: 0, scale: 0.3 }, 7.4)
+          .set("#tick-path", { strokeDasharray: 160, strokeDashoffset: 160 }, 7.4);
+
+        tl.set(".copy-slot", { opacity: 0 }, 7.4)
+          .set("#copy-3 .copy-line", { opacity: 0, y: 28 }, 7.4)
+          .set("#copy-3 .copy-kicker", { opacity: 0, x: -18 }, 7.4)
+          .set("#copy-4 .copy-line", { opacity: 0, y: 28 }, 7.4)
+          .set("#copy-4 .copy-kicker", { opacity: 0, x: -18 }, 7.4)
+          .set("#copy-5 .copy-line", { opacity: 0, y: 28 }, 7.4)
+          .set("#copy-5 .copy-kicker", { opacity: 0, x: -18 }, 7.4)
+          .set(".rule-path", { strokeDasharray: 480, strokeDashoffset: 480 }, 7.4);
+
+        // phone slides up
+        tl.fromTo(
+          "#phone",
+          { y: 190, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.62, ease: "power3.out" },
+          7.4,
+        );
+
+        // --- scene 3 copy ---
+        tl.set("#copy-3", { opacity: 1 }, 7.78)
+          .to("#copy-3 .copy-kicker", { opacity: 1, x: 0, duration: 0.3, ease: "power2.out" }, 7.78)
+          .to("#copy-3 .copy-line", { opacity: 1, y: 0, duration: 0.44, ease: "power3.out" }, 7.92)
+          .to("#copy-3 .rule-path", { strokeDashoffset: 0, duration: 0.36, ease: "power2.out" }, 8.2);
+
+        // --- the REC tap. beat-locked: 8.44s (strongCue 8.44, intensity 0.99) ---
+        tl.to("#phone-screen", { scale: 0.988, duration: 0.09, ease: "power2.out" }, 8.44)
+          .to("#phone-screen", { scale: 1, duration: 0.22, ease: "power2.out" }, 8.53)
+          .fromTo(
+            "#rec-ripple",
+            { opacity: 0.95, scale: 0.85 },
+            { opacity: 0, scale: 2.5, duration: 0.62, ease: "power2.out" },
+            8.44,
+          )
+          .to("#rec-frame", { opacity: 1, duration: 0.2, ease: "power2.out" }, 8.56)
+          .to("#rec-badge", { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, 8.6);
+
+        // recording timer 0:00 → 0:03 (deterministic, stepped)
+        var recTime = document.getElementById("rec-time");
+        var recState = { t: 0 };
+        tl.to(
+          recState,
+          {
+            t: 3,
+            duration: 1.9,
+            ease: "none",
+            onUpdate: function () {
+              recTime.textContent = "0:0" + Math.min(3, Math.floor(recState.t));
+            },
+          },
+          8.66,
+        );
+
+        // --- scene 3 out / scene 4 in (11.06) ---
+        tl.to("#copy-3", { opacity: 0, y: -18, duration: 0.2, ease: "power2.in" }, 10.86)
+          .to("#rec-frame", { opacity: 0, duration: 0.18, ease: "power1.in" }, 10.9)
+          .to("#rec-badge", { opacity: 0, duration: 0.18, ease: "power1.in" }, 10.9)
+          .to("#img-record", { opacity: 0, duration: 0.26, ease: "power2.inOut" }, 11.0)
+          .to("#img-calendar", { opacity: 1, duration: 0.26, ease: "power2.inOut" }, 11.0);
+
+        // masks only exist while the calendar screen is up
+        tl.to(".day-mask", { opacity: 1, duration: 0.26, ease: "power2.inOut" }, 11.0);
+
+        tl.set("#copy-4", { opacity: 1 }, 11.1)
+          .to("#copy-4 .copy-kicker", { opacity: 1, x: 0, duration: 0.3, ease: "power2.out" }, 11.1)
+          .to("#copy-4 .copy-line", { opacity: 1, y: 0, duration: 0.44, ease: "power3.out" }, 11.2)
+          .to("#copy-4 .rule-path", { strokeDashoffset: 0, duration: 0.36, ease: "power2.out" }, 11.5);
+
+        // --- the month fills in. beat-grid: 11.60 / 12.12 / 12.65 / 13.18 / 13.70 ---
+        var cellBeats = [11.6, 12.12, 12.65, 13.18, 13.7];
+        for (var c = 0; c < cellBeats.length; c++) {
+          tl.to(
+            "#mask-" + (c + 1),
+            { opacity: 0, scale: 1.14, y: -6, duration: 0.34, ease: "power2.out" },
+            cellBeats[c],
+          );
+        }
+
+        // gentle push-in over the filling month
+        tl.to("#phone", { scale: 1.06, duration: 2.6, ease: "power1.inOut" }, 11.5);
+
+        // --- scene 4 out / scene 5 in (14.76, strongCue 14.76) ---
+        tl.to("#copy-4", { opacity: 0, y: -18, duration: 0.2, ease: "power2.in" }, 14.56).to(
+          "#phone",
+          { scale: 1, duration: 0.5, ease: "power2.inOut" },
+          14.5,
+        );
+
+        tl.to("#img-calendar", { opacity: 0, duration: 0.26, ease: "power2.inOut" }, 14.7).to(
+          "#img-gallery",
+          { opacity: 1, duration: 0.26, ease: "power2.inOut" },
+          14.7,
+        );
+
+        tl.set("#copy-5", { opacity: 1 }, 14.8)
+          .to("#copy-5 .copy-kicker", { opacity: 1, x: 0, duration: 0.3, ease: "power2.out" }, 14.8)
+          .to("#copy-5 .copy-line", { opacity: 1, y: 0, duration: 0.44, ease: "power3.out" }, 14.9)
+          .to("#copy-5 .rule-path", { strokeDashoffset: 0, duration: 0.36, ease: "power2.out" }, 15.2);
+
+        // --- the Create Montage tap (15.28) ---
+        tl.fromTo(
+          "#tap-dot",
+          { opacity: 0.9, scale: 0.35 },
+          { opacity: 0, scale: 1.5, duration: 0.55, ease: "power2.out" },
+          15.28,
+        );
+
+        // --- the counter 0% → 100% ---
+        var pct = document.getElementById("pct-text");
+        var pctLabel = document.getElementById("pct-label");
+        var pctState = { v: 0 };
+        tl.to("#pct-mask", { opacity: 1, duration: 0.01 }, 15.34).to(
+          pctState,
+          {
+            v: 100,
+            duration: 1.98,
+            ease: "power1.out",
+            onUpdate: function () {
+              var v = Math.round(pctState.v);
+              pct.textContent = v + "%";
+              pctLabel.textContent = v >= 100 ? "Montage ready" : "Creating Montage";
+            },
+          },
+          15.4,
+        );
+
+        // --- 100%: the montage is ready (17.38) ---
+        tl.to("#tile-glow", { opacity: 1, duration: 0.26, ease: "power2.out" }, 17.38)
+          .set("#tile-tick", { opacity: 1 }, 17.42)
+          .to("#tick-path", { strokeDashoffset: 0, duration: 0.34, ease: "power2.out" }, 17.42)
+          .fromTo(
+            "#phone-screen",
+            { scale: 1 },
+            { scale: 1.014, duration: 0.18, ease: "power2.out" },
+            17.38,
+          )
+          .to("#phone-screen", { scale: 1, duration: 0.3, ease: "power2.out" }, 17.56);
+
+        // --- stage out (18.44) ---
+        tl.to("#copy-5", { opacity: 0, y: -18, duration: 0.24, ease: "power2.in" }, 18.1).to(
+          "#phone",
+          { y: 120, opacity: 0, duration: 0.32, ease: "power2.in" },
+          18.12,
+        );
+
+        /* =========================================================
+           SCENE 6 — outro (18.44 → 22.70)
+           ========================================================= */
+
+        tl.set("#s6-icon", { opacity: 0, scale: 0.7, rotation: -7 }, 18.44)
+          .set("#s6-word", { opacity: 0, y: 26 }, 18.44)
+          .set("#s6-tag", { opacity: 0, y: 22 }, 18.44)
+          .set("#s6-cta", { opacity: 0, y: 30 }, 18.44);
+
+        tl.to(
+          "#s6-icon",
+          { opacity: 1, scale: 1, rotation: 0, duration: 0.44, ease: "back.out(1.9)" },
+          18.5,
+        )
+          .to("#s6-word", { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 18.58)
+          .to("#s6-tag", { opacity: 1, y: 0, duration: 0.46, ease: "power3.out" }, 18.96);
+
+        // beat-locked: 20.53s (strongCue 20.53, intensity 0.96, onset_peak)
+        tl.to("#s6-cta", { opacity: 1, y: 0, duration: 0.44, ease: "power3.out" }, 20.53);
+
+        /* =========================================================
+           AUDIO-REACTIVE — subtle only (no waveforms, no pulsing text)
+           Bass → phone shadow depth + vignette warmth.
+           RMS  → a faint warm glow behind the wordmarks.
+           ========================================================= */
+
+        if (typeof AUDIO_BASS !== "undefined") {
+          var paperEl = document.getElementById("vignette");
+          var phoneBody = document.getElementById("phone-body");
+          var word2 = document.getElementById("s2-word");
+          var word6 = document.getElementById("s6-word");
+
+          var applyFrame = function (bass, rms) {
+            return function () {
+              var shadow = 34 + bass * 12;
+              var blur = 70 + bass * 22;
+              phoneBody.style.boxShadow =
+                "0 " +
+                shadow.toFixed(1) +
+                "px " +
+                blur.toFixed(1) +
+                "px rgba(25,25,25," +
+                (0.28 + bass * 0.07).toFixed(3) +
+                "), 0 4px 10px rgba(25,25,25,0.2)";
+              paperEl.style.opacity = (0.86 + rms * 0.14).toFixed(3);
+              var glow = (6 + rms * 12).toFixed(1);
+              var glowCss = "0 0 " + glow + "px rgba(139,94,60," + (0.05 + rms * 0.09).toFixed(3) + ")";
+              word2.style.textShadow = glowCss;
+              word6.style.textShadow = glowCss;
+            };
+          };
+
+          for (var f = 0; f < AUDIO_BASS.length; f++) {
+            tl.call(applyFrame(AUDIO_BASS[f], AUDIO_RMS[f]), [], f / AUDIO_FPS);
+          }
+        }
+
+        window.__timelines["main"] = tl;
+        tl.seek(0);
+      })();
+    </script>
+  </body>
+</html>

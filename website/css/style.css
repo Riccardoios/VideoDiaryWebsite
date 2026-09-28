@@ -460,6 +460,25 @@ article.guide .shot-inline {
   margin: 2rem auto;
 }
 
+/* in-article product video (16:9) */
+article.guide .video-embed { margin: 2rem 0; }
+article.guide .video-embed video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  border: 2.5px solid var(--ink);
+  box-shadow: var(--shadow-card);
+  background: var(--paper-deep);
+}
+article.guide .video-embed figcaption {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin-top: 0.7rem;
+  text-align: center;
+}
+
 .tip {
   background: var(--white);
   border: 2.5px solid var(--ink);
