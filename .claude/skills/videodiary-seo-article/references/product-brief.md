@@ -16,7 +16,7 @@ Corrections and additions to what a writer would otherwise assume:
 
 | | |
 |---|---|
-| Platforms | iPhone (iOS 17.6+), Apple Silicon Mac (macOS 14.6+), Apple Vision Pro (visionOS 1.3+). **Not an iPad app** — it's an iPhone app that iPad runs scaled, so never market it as iPad support. (The iTunes API lists iPad models in `supportedDevices`; that's what compatibility mode looks like, not native support.) |
+| Platforms | iPhone (iOS 17.6+). The listing also allows Apple Silicon Mac and Vision Pro, but **don't market Mac**: it launches there and doesn't run well yet. **Not an iPad app** — it's an iPhone app that iPad runs scaled, so never market it as iPad support. (The iTunes API lists iPad models in `supportedDevices`; that's what compatibility mode looks like, not native support.) |
 | Store name | "Video Journal: Video Diary" — the listing name, not just "Video Diary" |
 | Subtitle | "Daily Movie Diary & Journal" **[verify — this changed in July 2026]** |
 | Rating | 4.5★ from **25 ratings** (US) **[verify — always re-check]**. 25 is too few to use as social proof; cite the stars if the page shows them, never "loved by thousands". |
@@ -48,7 +48,6 @@ Different storefronts sell different products. The App Store product page lists 
 - **The montage payoff.** Recording is the habit; rewatching is the reward. Any clip length, not restricted to one second.
 - **Mood tracking with an Insight view** for patterns over time.
 - **Free for the core loop.** Premium buys extras, not the ability to record today.
-- **Ships on Vision Pro and Mac**, which most competitors don't.
 
 ## Honest weaknesses (use these — they are what makes a page credible)
 

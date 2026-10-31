@@ -20,6 +20,8 @@
 | First released | 2022-01-22 | — |
 | Size | ~102 MB | 2026-07-14 |
 | Compatibility | iPhone (iOS 17.6+), Apple Silicon Mac (macOS 14.6+), Apple Vision Pro (visionOS 1.3+) | 2026-08-01 |
+
+**Don't market Mac support.** The listing allows Apple Silicon Macs and the app does launch there, but it doesn't run well on Mac yet, so the developer doesn't want it advertised (decided 2026-10-31). Market it as an iPhone app. Don't write Mac-targeted pages and don't list Mac as a platform in copy.
 | Languages | English, French, German, Italian, Japanese, Simplified Chinese, Spanish | 2026-08-01 |
 | Privacy policy | https://riccardoios.github.io/life-in-seconds-video-diary | — |
 

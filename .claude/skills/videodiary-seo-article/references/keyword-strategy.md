@@ -61,7 +61,7 @@ The site's existing eight guides sit almost entirely here — see the guide/keyw
 
 **Angles unique to this app that competitors cannot copy**
 - The no-AI position. Every journaling app is racing to add AI transcription and summaries. A significant group of people specifically don't want their most private thoughts processed in someone else's cloud, and almost nobody is writing for them. This is the strongest differentiated angle the site has.
-- Apple Vision Pro and Mac support — small audience, near-zero competition, very cheap to rank for.
+- ~~Mac support~~: don't target it. The app launches on Mac but doesn't run well there, and the developer doesn't want it advertised.
 - Localized-market queries. The app ships in seven languages and the user base skews US then Germany; German-language equivalents of Tier 1 queries face far less competition than English ones. Only pursue if the site can serve localized pages properly.
 
 ## Cannibalization check
