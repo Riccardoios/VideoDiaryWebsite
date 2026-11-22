@@ -32,14 +32,32 @@
     "image": "https://videodiary.io/assets/og-image.png",
     "author": {
       "@type": "Person",
-      "name": "Riccardo Carlotto"
+      "@id": "https://videodiary.io/about#riccardo",
+      "name": "Riccardo Carlotto",
+      "url": "https://videodiary.io/about",
+      "jobTitle": "Independent iOS developer",
+      "sameAs": [
+        "https://github.com/Riccardoios",
+        "https://apps.apple.com/us/developer/riccardo-carlotto/id1522617028"
+      ]
     },
     "publisher": {
-      "@type": "Person",
-      "name": "Riccardo Carlotto"
+      "@type": "Organization",
+      "@id": "https://videodiary.io/#org",
+      "name": "Video Diary",
+      "url": "https://videodiary.io/",
+      "logo": "https://videodiary.io/assets/icon-1024.png",
+      "email": "developer.riccardo.mobile@gmail.com",
+      "founder": { "@id": "https://videodiary.io/about#riccardo" },
+      "sameAs": [
+        "https://www.instagram.com/videodiary.app",
+        "https://www.tiktok.com/@beckybecky7972",
+        "https://apps.apple.com/us/app/video-diary/id1606008204",
+        "https://github.com/Riccardoios"
+      ]
     },
     "datePublished": "2026-10-31",
-    "dateModified": "2026-10-31",
+    "dateModified": "2026-11-22",
     "mainEntityOfPage": "https://videodiary.io/guides/back-up-video-journal"
   },
   {
@@ -112,7 +130,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/">
-      <img src="/assets/apple-touch-icon.png" alt="Video Diary app icon" width="40" height="40">
+      <picture><source type="image/webp" srcset="/assets/apple-touch-icon.webp"><img src="/assets/apple-touch-icon.png" alt="Video Diary app icon" width="40" height="40"></picture>
       Video Diary
     </a>
     <nav class="site-nav" aria-label="Main">
@@ -131,7 +149,7 @@
   <div class="wrap">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/guides/">Guides</a> › Back up a video journal</nav>
     <h1>How to back up a video journal on iPhone</h1>
-    <p class="meta">By Riccardo Carlotto · Updated October 2026</p>
+    <p class="meta">By <a href="/about" rel="author">Riccardo Carlotto</a> · Updated November 2026</p>
   </div>
 </div>
 
@@ -141,7 +159,7 @@
 <div class="tip"><strong>Quick answer:</strong> To back up a video journal on iPhone, (1) check whether your journaling app is actually included in your iPhone backup, because many aren't; (2) turn on the app's own cloud backup if it has one; (3) export your clips every month or so to a computer or an external drive; (4) turn on Advanced Data Protection so the iCloud copies are end-to-end encrypted; and (5) before you switch phones, check the new one has everything before you wipe the old one.</div>
 
 <h2>Is my video journal in my iPhone backup?</h2>
-<p>Maybe not, and nothing on the phone will tell you. An app decides which of its files go into iCloud Backup and computer backups. A journaling app has good reasons to leave some out, and they all come down to the entries being private and, in the case of video, heavy.</p>
+<p>Maybe not, and nothing on the iPhone will tell you whether your video journal made it into the backup. An app decides which of its files go into iCloud Backup and computer backups. A journaling app has good reasons to leave some out, and they all come down to the entries being private and, in the case of video, heavy.</p>
 <p>Here's how four apps you might be using handle it. I checked each one's help pages and plans on 31 October 2026.</p>
 
 <div class="table-wrap">
@@ -153,16 +171,16 @@
 <tr><td>Video Diary</td><td>No, never</td><td>Automatic iCloud backup with Premium</td><td>Yes, free: one clip, a montage, or everything</td></tr>
 <tr><td>Apple Journal</td><td>Only in an encrypted backup to a Mac or PC</td><td>None. Syncing between your devices isn't a backup</td><td>Yes: Export All Journal Entries makes a ZIP with your media</td></tr>
 <tr><td>Day One</td><td>Doesn't rely on it; entries live in Day One's cloud</td><td>Cloud backup on every plan; video needs Silver ($49.99/year)</td><td>Yes: JSON export with a videos folder</td></tr>
-<tr><td>1 Second Everyday</td><td>Yes, its help says iCloud Backup covers it without Pro</td><td>1SE Cloud Backup with Pro</td><td>The finished mashup, yes</td></tr>
+<tr><td>1 Second Everyday</td><td>Yes, <a href="https://help.1se.co/en/articles/805913-how-to-back-up-with-icloud">its help</a> says iCloud Backup covers it without Pro</td><td>1SE Cloud Backup with Pro</td><td>The finished mashup, yes</td></tr>
 </tbody>
 </table>
 </div>
 
-<p>Mine is the one that looks worst in that table, so let me be plain about it. If you use Video Diary without Premium, the only copy of your diary is on your phone. A full iCloud Backup won't save it, and nor will restoring a new iPhone from that backup. Premium's iCloud backup runs on its own and brings everything back when you reinstall on a phone signed into the same Apple Account. Without Premium, the free export is your safety net, and you have to remember to use it.</p>
-<p>1SE gets this right for free users, and that's worth knowing if you're choosing between the two. Apple Journal is the one that surprises people most. It syncs between your iPhone, iPad and Mac, which feels like a backup and isn't one: sync mirrors every change, including the ones you didn't mean to make, and Apple's own help page says Journal entries aren't backed up to iCloud.</p>
+<p>Video Diary, the app I make, is the one that looks worst in that table, so let me be plain about it. If you use Video Diary without Premium, the only copy of your diary is on your phone. A full iCloud Backup won't save it, and nor will restoring a new iPhone from that backup. Premium's iCloud backup runs on its own and brings everything back when you reinstall on a phone signed into the same Apple Account. Without Premium, the free export is your safety net, and you have to remember to use it.</p>
+<p>1SE gets this right for free users, and that's worth knowing if you're choosing between the two. Apple Journal is the one that surprises people most. Journal syncs between your iPhone, iPad and Mac, which feels like a backup and isn't one: sync mirrors every change, including the ones you didn't mean to make, and <a href="https://support.apple.com/en-us/121822">Apple's own help page</a> says Journal entries aren't backed up to iCloud.</p>
 
 <h2>How much storage does a year of video take?</h2>
-<p>More than people expect, and this decides where your backups can go. Apple doesn't publish a size per minute. Independent measurements of iPhone video at 1080p, 30 frames per second, in the default High Efficiency format land at roughly 60 to 90 MB per minute. Your app's recording settings will move that up or down, so treat these as estimates:</p>
+<p>A year of daily video takes more storage than people expect, and that number decides where your backups can go. Apple doesn't publish a size per minute. Independent measurements of iPhone video at 1080p, 30 frames per second, in the default High Efficiency format land at roughly 60 to 90 MB per minute. Your app's recording settings will move that up or down, so treat these as estimates:</p>
 
 <div class="table-wrap">
 <table>
@@ -178,7 +196,7 @@
 </table>
 </div>
 
-<p>So for anyone talking for a minute a day, a cloud backup means paying for iCloud+ as well as the app's backup feature. In the US, Apple charges $0.99 a month for 50 GB, $2.99 for 200 GB and $9.99 for 2 TB. A minute a day fits in 50 GB for about a year and a half, and in 200 GB for several years. This is the honest cost of keeping a diary as video. You get faces and voices, and you pay for them in gigabytes.</p>
+<p>So for anyone talking for a minute a day, a cloud backup means paying for iCloud+ as well as the app's backup feature. In the US, <a href="https://support.apple.com/en-us/108047">Apple charges</a> $0.99 a month for 50 GB, $2.99 for 200 GB and $9.99 for 2 TB. A minute a day fits in 50 GB for about a year and a half, and in 200 GB for several years. This is the honest cost of keeping a diary as video. You get faces and voices, and you pay for them in gigabytes.</p>
 
 <h2>A backup routine for a video journal</h2>
 
@@ -187,7 +205,7 @@
 <p>Don't test it by deleting and reinstalling the app. If the answer was "neither", that test deletes your diary.</p>
 
 <h3>Step 2: Turn on the app's own backup, if it has one</h3>
-<p>This is the copy that works without you thinking about it, and it's the one that gets you back to normal fastest on a new phone. Check two things: whether it's a paid feature, and whose servers it uses. A backup to your own iCloud account sits inside your Apple Account and its protections. A backup to the developer's servers means trusting their security and their retention policy for years. I wrote more about that trade-off in <a href="/guides/private-video-diary">how to keep a private video diary</a>.</p>
+<p>The app's own backup is the copy that works without you thinking about it, and it's the one that gets you back to normal fastest on a new phone. Check two things: whether it's a paid feature, and whose servers it uses. A backup to your own iCloud account sits inside your Apple Account and its protections. A backup to the developer's servers means trusting their security and their retention policy for years. I wrote more about that trade-off in <a href="/guides/private-video-diary">how to keep a private video diary</a>.</p>
 <p>In Video Diary, Premium turns on the iCloud backup and it runs by itself after that. Premium is $6.99 a week or $44.99 a year on the US App Store, and it also adds palettes, fonts and a Face ID lock. The backup counts against your own iCloud storage, so the table above still applies.</p>
 
 <h3>Step 3: Export a copy you hold yourself</h3>
@@ -201,12 +219,12 @@
 <p>Photographers have a rule of thumb for this, 3-2-1: three copies, on two different kinds of storage, with one of them somewhere else. For a diary, the phone, the app's cloud backup and an external drive in a drawer covers it.</p>
 <p>In Video Diary, you can export one clip, a finished montage, or every entry at once, and none of it needs Premium. If you don't pay for Premium, this step is your backup, so set a monthly reminder.</p>
 
-<img class="shot-inline" src="/assets/screenshot-3.png" alt="Video Diary gallery on iPhone listing daily videos with their durations while a montage is being created" width="1284" height="2778" loading="lazy">
+<picture><source type="image/webp" srcset="/assets/screenshot-3.webp"><img class="shot-inline" src="/assets/screenshot-3.png" alt="Video Diary gallery on iPhone listing daily videos with their durations while a montage is being created" width="1284" height="2778" loading="lazy"></picture>
 
 <h3>Step 4: Keep the copies as private as the diary</h3>
 <p>A backup is one more place your diary can be read. Three things to do:</p>
 <ul>
-<li><strong>Turn on Advanced Data Protection</strong> (Settings › your name › iCloud). Under Apple's standard protection, iCloud Backup and iCloud Drive are encrypted, but Apple holds the keys. With Advanced Data Protection they become end-to-end encrypted, and so does third-party app data stored in CloudKit encrypted fields and assets. Only your devices can read them. If you lose access to your devices you'll need a recovery contact or recovery key, so set one up properly.</li>
+<li><strong>Turn on <a href="https://support.apple.com/en-us/108756">Advanced Data Protection</a></strong> (Settings › your name › iCloud). Under <a href="https://support.apple.com/en-us/102651">Apple's standard protection</a>, iCloud Backup and iCloud Drive are encrypted, but Apple holds the keys. With Advanced Data Protection they become end-to-end encrypted, and so does third-party app data stored in CloudKit encrypted fields and assets. Only your devices can read them. If you lose access to your devices you'll need a recovery contact or recovery key, so set one up properly.</li>
 <li><strong>Keep exports out of Photos.</strong> Save them to Files instead. In the photo library, diary entries get mixed in with everything else, turn up in Memories, and can end up in a Shared Library.</li>
 <li><strong>Encrypt the external drive.</strong> On a Mac, Disk Utility can format a drive as encrypted APFS. Then a drive that goes missing from the drawer doesn't take your diary with it.</li>
 </ul>
@@ -335,6 +353,9 @@
           <li><a href="/#how-it-works">How it works</a></li>
           <li><a href="/#faq">FAQ</a></li>
           <li><a href="https://riccardoios.github.io/life-in-seconds-video-diary">Privacy policy</a></li>
+          <li><a href="/about">About &amp; contact</a></li>
+          <li><a href="https://www.instagram.com/videodiary.app" rel="me">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@beckybecky7972" rel="me">TikTok</a></li>
         </ul>
       </div>
     </div>

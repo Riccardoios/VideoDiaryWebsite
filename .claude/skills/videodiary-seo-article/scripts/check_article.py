@@ -157,7 +157,7 @@ class Collector(HTMLParser):
 
     def store_links(self):
         return [l for l in self.links
-                if f"id{APP_ID}" in l["href"] or "apps.apple.com" in l["href"]]
+                if f"id{APP_ID}" in l["href"]]  # competitor App Store listings cited as sources aren't CTAs
 
 
 def parse(path):

@@ -19,13 +19,13 @@
 | Current version | 2.24 (released 2026-08-21) | 2026-08-28 |
 | First released | 2022-01-22 | — |
 | Size | ~102 MB | 2026-07-14 |
-| Compatibility | iPhone (iOS 17.6+), Apple Silicon Mac (macOS 14.6+), Apple Vision Pro (visionOS 1.3+) | 2026-08-01 |
+| Compatibility | iPhone and iPad (official iPad support confirmed 2026-11-22), iPhone iOS 17.6+, Apple Silicon Mac (macOS 14.6+), Apple Vision Pro (visionOS 1.3+) | 2026-08-01 |
 
 **Don't market Mac support.** The listing allows Apple Silicon Macs and the app does launch there, but it doesn't run well on Mac yet, so the developer doesn't want it advertised (decided 2026-10-31). Market it as an iPhone app. Don't write Mac-targeted pages and don't list Mac as a platform in copy.
 | Languages | English, French, German, Italian, Japanese, Simplified Chinese, Spanish | 2026-08-01 |
 | Privacy policy | https://riccardoios.github.io/life-in-seconds-video-diary | — |
 
-**Not an iPad app.** It is an iPhone app that iPad can run scaled, so it must not be marketed as an iPad app. The iTunes lookup API lists iPad models in `supportedDevices`, which is what compatibility-mode support looks like in that field — don't read it as native iPad support.
+**iPhone and iPad.** As of 2026-11-22 the app officially supports iPad as well as iPhone (developer-confirmed), so copy may say "for iPhone and iPad". This replaces the earlier "not an iPad app" rule.
 
 **Ratings caveat:** 30 ratings is a small base. Quote the 4.5 ★ figure if the page shows it, but never dress it up as broad social proof ("loved by thousands" etc.).
 

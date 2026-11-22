@@ -32,14 +32,32 @@
     "image": "https://videodiary.io/assets/og-image.png",
     "author": {
       "@type": "Person",
-      "name": "Riccardo Carlotto"
+      "@id": "https://videodiary.io/about#riccardo",
+      "name": "Riccardo Carlotto",
+      "url": "https://videodiary.io/about",
+      "jobTitle": "Independent iOS developer",
+      "sameAs": [
+        "https://github.com/Riccardoios",
+        "https://apps.apple.com/us/developer/riccardo-carlotto/id1522617028"
+      ]
     },
     "publisher": {
-      "@type": "Person",
-      "name": "Riccardo Carlotto"
+      "@type": "Organization",
+      "@id": "https://videodiary.io/#org",
+      "name": "Video Diary",
+      "url": "https://videodiary.io/",
+      "logo": "https://videodiary.io/assets/icon-1024.png",
+      "email": "developer.riccardo.mobile@gmail.com",
+      "founder": { "@id": "https://videodiary.io/about#riccardo" },
+      "sameAs": [
+        "https://www.instagram.com/videodiary.app",
+        "https://www.tiktok.com/@beckybecky7972",
+        "https://apps.apple.com/us/app/video-diary/id1606008204",
+        "https://github.com/Riccardoios"
+      ]
     },
     "datePublished": "2026-09-28",
-    "dateModified": "2026-09-28",
+    "dateModified": "2026-11-22",
     "mainEntityOfPage": "https://videodiary.io/guides/apple-journal-video-journaling"
   },
   {
@@ -130,7 +148,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/">
-      <img src="/assets/apple-touch-icon.png" alt="Video Diary app icon" width="40" height="40">
+      <picture><source type="image/webp" srcset="/assets/apple-touch-icon.webp"><img src="/assets/apple-touch-icon.png" alt="Video Diary app icon" width="40" height="40"></picture>
       Video Diary
     </a>
     <nav class="site-nav" aria-label="Main">
@@ -149,7 +167,7 @@
   <div class="wrap">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/guides/">Guides</a> › Apple Journal for video journaling</nav>
     <h1>Apple Journal for video journaling: where it falls short</h1>
-    <p class="meta">By Riccardo Carlotto · Updated September 2026</p>
+    <p class="meta">By <a href="/about" rel="author">Riccardo Carlotto</a> · Updated November 2026</p>
   </div>
 </div>
 
@@ -183,7 +201,7 @@
 </tbody>
 </table>
 </div>
-<p class="meta">Apple Journal details are from Apple's support documentation and its iOS 27 release notes as of 28 September 2026.</p>
+<p class="meta">Apple Journal details are from Apple's support documentation (<a href="https://support.apple.com/en-us/121822">backing up and exporting Journal entries</a>, <a href="https://support.apple.com/guide/iphone/protect-your-journal-entries-iph9c59b1557/ios">protecting your journal entries</a>, and the <a href="https://support.apple.com/en-us/102651">iCloud data security overview</a>) and its iOS 27 release notes as of 28 September 2026.</p>
 
 <h2>Where Apple Journal is better</h2>
 <p>I'll start here because it's the part that's easy to skip if you've built a competitor, and it's most of the reason Journal is the right answer for a lot of people.</p>
@@ -191,7 +209,6 @@
 <li><strong>It costs nothing and you already have it.</strong> No download, no account, no paywall on anything. That removes the single biggest reason people never start.</li>
 <li><strong>It knows about your day before you do.</strong> Journal's suggestions pull in the photos you took at a place, a workout you logged, the music you listened to, and offer them as a starting point. For a written journal that's a genuinely useful nudge, and no third-party app can reach that data the same way.</li>
 <li><strong>It's the better writing tool.</strong> Long reflective entries, formatting, multiple journals for different parts of your life since iOS 26, and full-text search over what you wrote. If you want to find the entry where you described the job interview, Journal finds it. Video Diary can't, because nothing transcribes what you say.</li>
-<li><strong>Native iPad.</strong> Since iPadOS 26 Journal runs properly on iPad. Video Diary doesn't: iPad runs it as a scaled iPhone app.</li>
 <li><strong>It's getting better every year.</strong> iOS 27 added daily or weekly streak settings, timestamps on entries, a visible iCloud sync status, and higher attachment limits.</li>
 </ul>
 
@@ -205,7 +222,7 @@
 <li><strong>Nothing reads your entries.</strong> iOS 27's new dynamic prompts are generated from what you've already written, so something is interpreting your diary to produce them. Video Diary's daily question is a fixed list I wrote. I've gone into <a href="/guides/journaling-apps-without-ai">which journals still keep AI out entirely</a> separately, because it's become its own shopping question this year.</li>
 </ul>
 
-<img class="shot-inline" src="/assets/screenshot-1.png" alt="Video Diary calendar view on iPhone with a video thumbnail on each recorded day of the month" width="1284" height="2778" loading="lazy">
+<picture><source type="image/webp" srcset="/assets/screenshot-1.webp"><img class="shot-inline" src="/assets/screenshot-1.png" alt="Video Diary calendar view on iPhone with a video thumbnail on each recorded day of the month" width="1284" height="2778" loading="lazy"></picture>
 
 <h2>Can Apple Journal be your video diary?</h2>
 <p>It can, and some people make it work. The question is whether you'll still be doing it in March.</p>
@@ -226,7 +243,7 @@
 <div class="app-callout">
 <h2>If you'd rather talk than type</h2>
 <p>Video Diary opens on the camera. Tap REC, say what's on your mind, and the day lands on your calendar with an optional mood and note. No account, no feed, and no model anywhere near what you say. When you want to look back, the montage maker turns your days into one film.</p>
-<p>Free for daily journaling on iPhone (iOS 17.6+), Apple silicon Mac and Vision Pro; 4.5 stars from 37 ratings on the US App Store, which is a small base, so treat it as a signal. Premium is $6.99 a week or $44.99 a year in the US and adds palettes, fonts, Face ID lock and iCloud backup, not the ability to record. <a href="https://apps.apple.com/app/apple-store/id1606008204?pt=121784039&amp;ct=apple-journal-video-journaling&amp;mt=8">Try Video Diary free</a>. No Android version, and it isn't a native iPad app.</p>
+<p>Free for daily journaling on iPhone (iOS 17.6+) and iPad; 4.5 stars from 37 ratings on the US App Store, which is a small base, so treat it as a signal. Premium is $6.99 a week or $44.99 a year in the US and adds palettes, fonts, Face ID lock and iCloud backup, not the ability to record. <a href="https://apps.apple.com/app/apple-store/id1606008204?pt=121784039&amp;ct=apple-journal-video-journaling&amp;mt=8">Try Video Diary free</a>. No Android version.</p>
 </div>
 
 <h2>Frequently asked questions</h2>
@@ -260,7 +277,7 @@
 <details>
 <summary>Is Apple Journal private?</summary>
 <div class="answer">
-<p>Reasonably. You can lock it with Face ID or your passcode, and entries synced to iCloud are encrypted in transit and on Apple's servers. Apple's iCloud security overview lists Journal data as end-to-end encrypted when Advanced Data Protection is turned on, so switch that on if you want Apple itself unable to read your entries.</p>
+<p>Reasonably. You can lock it with Face ID or your passcode, and entries synced to iCloud are encrypted in transit and on Apple's servers. <a href="https://support.apple.com/en-us/102651">Apple's iCloud security overview</a> lists Journal data as end-to-end encrypted when Advanced Data Protection is turned on, so switch that on if you want Apple itself unable to read your entries.</p>
 <a class="learn-more" href="/guides/private-video-diary">Learn more: what a private video diary needs →</a>
 </div>
 </details>
@@ -314,7 +331,7 @@
     <div class="footer-cols">
       <div>
         <h3>Video Diary</h3>
-        <p>The simplest video journaling app for iPhone, Mac, and Apple Vision Pro. Private by design — no AI, no feed, just your story.</p>
+        <p>The simplest video journaling app for iPhone and iPad. Private by design — no AI, no feed, just your story.</p>
       </div>
       <div>
         <h3>Guides</h3>
@@ -343,6 +360,9 @@
           <li><a href="/#how-it-works">How it works</a></li>
           <li><a href="/#faq">FAQ</a></li>
           <li><a href="https://riccardoios.github.io/life-in-seconds-video-diary">Privacy policy</a></li>
+          <li><a href="/about">About &amp; contact</a></li>
+          <li><a href="https://www.instagram.com/videodiary.app" rel="me">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@beckybecky7972" rel="me">TikTok</a></li>
         </ul>
       </div>
     </div>

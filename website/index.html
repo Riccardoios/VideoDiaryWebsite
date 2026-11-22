@@ -30,6 +30,26 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://videodiary.io/#org",
+  "name": "Video Diary",
+  "url": "https://videodiary.io/",
+  "logo": "https://videodiary.io/assets/icon-1024.png",
+  "email": "developer.riccardo.mobile@gmail.com",
+  "founder": {
+    "@id": "https://videodiary.io/about#riccardo"
+  },
+  "sameAs": [
+    "https://www.instagram.com/videodiary.app",
+    "https://www.tiktok.com/@beckybecky7972",
+    "https://apps.apple.com/us/app/video-diary/id1606008204",
+    "https://github.com/Riccardoios"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Video Journal: Video Diary",
   "operatingSystem": "iOS 17.6 or later, macOS 14.6 or later, visionOS 1.3 or later",
@@ -38,7 +58,18 @@
   "image": "https://videodiary.io/assets/icon-1024.png",
   "url": "https://videodiary.io/",
   "installUrl": "https://apps.apple.com/us/app/video-diary/id1606008204",
-  "author": { "@type": "Person", "name": "Riccardo Carlotto" },
+  "author": {
+      "@type": "Person",
+      "@id": "https://videodiary.io/about#riccardo",
+      "name": "Riccardo Carlotto",
+      "url": "https://videodiary.io/about",
+      "jobTitle": "Independent iOS developer",
+      "sameAs": [
+        "https://github.com/Riccardoios",
+        "https://apps.apple.com/us/developer/riccardo-carlotto/id1522617028"
+      ]
+    },
+  "publisher": { "@id": "https://videodiary.io/#org" },
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "25" }
 }
@@ -107,7 +138,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/">
-      <img src="/assets/apple-touch-icon.png" alt="Video Diary app icon — hand-drawn diary with a red video camera" width="40" height="40">
+      <picture><source type="image/webp" srcset="/assets/apple-touch-icon.webp"><img src="/assets/apple-touch-icon.png" alt="Video Diary app icon — hand-drawn diary with a red video camera" width="40" height="40"></picture>
       Video Diary
     </a>
     <nav class="site-nav" aria-label="Main">
@@ -126,7 +157,7 @@
 <section class="hero" id="top">
   <div class="wrap">
     <div class="hero-copy">
-      <img class="hero-icon" src="/assets/icon-1024.png" alt="Video Diary — video journal app icon" width="88" height="88">
+      <picture><source type="image/webp" srcset="/assets/icon-1024.webp"><img class="hero-icon" src="/assets/icon-1024.png" alt="Video Diary — video journal app icon" width="88" height="88"></picture>
       <h1>The video diary app that keeps journaling <span>simple</span>.</h1>
       <p class="hero-sub">Open the app, tap record, done. Video Diary is a private video journal for iPhone — no AI chatbots, no filters, no feed. Just you and your story, one video a day.</p>
       <ul class="hero-points">
@@ -149,7 +180,7 @@
       </div>
     </div>
     <div class="hero-media">
-      <img src="/assets/screenshot-1.png" alt="Video Diary app calendar view showing a video journal entry recorded every day of the month" width="1284" height="2778">
+      <picture><source type="image/webp" srcset="/assets/screenshot-1.webp"><img src="/assets/screenshot-1.png" alt="Video Diary app calendar view showing a video journal entry recorded every day of the month" width="1284" height="2778"></picture>
     </div>
   </div>
 </section>
@@ -183,19 +214,19 @@
     </div>
     <div class="shots" role="list">
       <figure role="listitem">
-        <img src="/assets/screenshot-1.png" alt="Calendar view of the Video Diary app with a daily video journal entry on each day" width="1284" height="2778" loading="lazy">
+        <picture><source type="image/webp" srcset="/assets/screenshot-1.webp"><img src="/assets/screenshot-1.png" alt="Calendar view of the Video Diary app with a daily video journal entry on each day" width="1284" height="2778" loading="lazy"></picture>
         <figcaption>Your life, day by day</figcaption>
       </figure>
       <figure role="listitem">
-        <img src="/assets/screenshot-2.png" alt="Recording a video diary entry with a daily journal prompt and mood tracker" width="1284" height="2778" loading="lazy">
+        <picture><source type="image/webp" srcset="/assets/screenshot-2.webp"><img src="/assets/screenshot-2.png" alt="Recording a video diary entry with a daily journal prompt and mood tracker" width="1284" height="2778" loading="lazy"></picture>
         <figcaption>One tap to record, prompts included</figcaption>
       </figure>
       <figure role="listitem">
-        <img src="/assets/screenshot-3.png" alt="Video Diary gallery creating a montage movie from daily video journal entries" width="1284" height="2778" loading="lazy">
+        <picture><source type="image/webp" srcset="/assets/screenshot-3.webp"><img src="/assets/screenshot-3.png" alt="Video Diary gallery creating a montage movie from daily video journal entries" width="1284" height="2778" loading="lazy"></picture>
         <figcaption>Montages from your daily clips</figcaption>
       </figure>
       <figure role="listitem">
-        <img src="/assets/screenshot-4.png" alt="Choosing a custom color palette to personalize the Video Diary journaling app" width="1284" height="2778" loading="lazy">
+        <picture><source type="image/webp" srcset="/assets/screenshot-4.webp"><img src="/assets/screenshot-4.png" alt="Choosing a custom color palette to personalize the Video Diary journaling app" width="1284" height="2778" loading="lazy"></picture>
         <figcaption>Palettes &amp; fonts that feel yours</figcaption>
       </figure>
     </div>
@@ -397,7 +428,7 @@
 <!-- ============ FINAL CTA ============ -->
 <section class="final-cta">
   <div class="wrap">
-    <img class="hero-icon" src="/assets/icon-1024.png" alt="" width="88" height="88" loading="lazy">
+    <picture><source type="image/webp" srcset="/assets/icon-1024.webp"><img class="hero-icon" src="/assets/icon-1024.png" alt="" width="88" height="88" loading="lazy"></picture>
     <h2>Your life, one video at a time.</h2>
     <p>Future you will want to see today. Start your video diary now — it takes one tap, and it's free.</p>
     <div class="hero-actions">
@@ -423,7 +454,7 @@
     <div class="footer-cols">
       <div>
         <h3>Video Diary</h3>
-        <p>The simplest video journaling app for iPhone, Mac, and Apple Vision Pro. Private by design — no AI, no feed, just your story.</p>
+        <p>The simplest video journaling app for iPhone and iPad. Private by design — no AI, no feed, just your story.</p>
       </div>
       <div>
         <h3>Guides</h3>
@@ -452,6 +483,9 @@
           <li><a href="/#how-it-works">How it works</a></li>
           <li><a href="/#faq">FAQ</a></li>
           <li><a href="https://riccardoios.github.io/life-in-seconds-video-diary">Privacy policy</a></li>
+          <li><a href="/about">About &amp; contact</a></li>
+          <li><a href="https://www.instagram.com/videodiary.app" rel="me">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@beckybecky7972" rel="me">TikTok</a></li>
         </ul>
       </div>
     </div>

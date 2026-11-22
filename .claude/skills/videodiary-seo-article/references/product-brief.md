@@ -16,7 +16,7 @@ Corrections and additions to what a writer would otherwise assume:
 
 | | |
 |---|---|
-| Platforms | iPhone (iOS 17.6+). The listing also allows Apple Silicon Mac and Vision Pro, but **don't market Mac**: it launches there and doesn't run well yet. **Not an iPad app** — it's an iPhone app that iPad runs scaled, so never market it as iPad support. (The iTunes API lists iPad models in `supportedDevices`; that's what compatibility mode looks like, not native support.) |
+| Platforms | iPhone (iOS 17.6+). The listing also allows Apple Silicon Mac and Vision Pro, but **don't market Mac**: it launches there and doesn't run well yet. **iPad is officially supported** (developer-confirmed 2026-11-22), so "for iPhone and iPad" is accurate. |
 | Store name | "Video Journal: Video Diary" — the listing name, not just "Video Diary" |
 | Subtitle | "Daily Movie Diary & Journal" **[verify — this changed in July 2026]** |
 | Rating | 4.5★ from **25 ratings** (US) **[verify — always re-check]**. 25 is too few to use as social proof; cite the stars if the page shows them, never "loved by thousands". |

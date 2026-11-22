@@ -1,0 +1,9 @@
+# Cloudflare Pages response headers — https://developers.cloudflare.com/pages/configuration/headers/
+# CSP ships as Report-Only first; switch the header name to Content-Security-Policy
+# once a week of traffic shows no violations in the browser console.
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests

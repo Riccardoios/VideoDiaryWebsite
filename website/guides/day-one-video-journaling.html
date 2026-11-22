@@ -32,14 +32,32 @@
     "image": "https://videodiary.io/assets/og-image.png",
     "author": {
       "@type": "Person",
-      "name": "Riccardo Carlotto"
+      "@id": "https://videodiary.io/about#riccardo",
+      "name": "Riccardo Carlotto",
+      "url": "https://videodiary.io/about",
+      "jobTitle": "Independent iOS developer",
+      "sameAs": [
+        "https://github.com/Riccardoios",
+        "https://apps.apple.com/us/developer/riccardo-carlotto/id1522617028"
+      ]
     },
     "publisher": {
-      "@type": "Person",
-      "name": "Riccardo Carlotto"
+      "@type": "Organization",
+      "@id": "https://videodiary.io/#org",
+      "name": "Video Diary",
+      "url": "https://videodiary.io/",
+      "logo": "https://videodiary.io/assets/icon-1024.png",
+      "email": "developer.riccardo.mobile@gmail.com",
+      "founder": { "@id": "https://videodiary.io/about#riccardo" },
+      "sameAs": [
+        "https://www.instagram.com/videodiary.app",
+        "https://www.tiktok.com/@beckybecky7972",
+        "https://apps.apple.com/us/app/video-diary/id1606008204",
+        "https://github.com/Riccardoios"
+      ]
     },
     "datePublished": "2026-10-17",
-    "dateModified": "2026-10-17",
+    "dateModified": "2026-11-22",
     "mainEntityOfPage": "https://videodiary.io/guides/day-one-video-journaling"
   },
   {
@@ -69,7 +87,7 @@
         "name": "Is there a video length limit in Day One?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Day One's own help pages don't agree. Its pricing guide lists a five-minute limit for video, while its media guide says only the Android in-app camera stops at five minutes and that the Apple apps don't cap clips by length. If you talk for longer than five minutes, test it before you rely on it."
+          "text": "Yes. Day One caps each video at five minutes. Its pricing guide lists a five-minute limit for video, and its media guide says a video longer than five minutes shows an error and that the limit is the same on every platform. If you talk for longer than five minutes, record in a dedicated video app or split the entry."
         }
       },
       {
@@ -130,7 +148,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/">
-      <img src="/assets/apple-touch-icon.png" alt="Video Diary app icon" width="40" height="40">
+      <picture><source type="image/webp" srcset="/assets/apple-touch-icon.webp"><img src="/assets/apple-touch-icon.png" alt="Video Diary app icon" width="40" height="40"></picture>
       Video Diary
     </a>
     <nav class="site-nav" aria-label="Main">
@@ -149,12 +167,12 @@
   <div class="wrap">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/guides/">Guides</a> › Day One for video journaling</nav>
     <h1>Day One for video journaling: what works and what doesn't</h1>
-    <p class="meta">By Riccardo Carlotto · Updated October 2026</p>
+    <p class="meta">By <a href="/about" rel="author">Riccardo Carlotto</a> · Updated November 2026</p>
   </div>
 </div>
 
 <article class="guide">
-<p>Day One can be a video journal, but only on a paid plan, and only in the sense that a letter can hold a photograph. The free tier takes no video at all. Silver and Gold let you attach clips to written entries, sync them everywhere, and encrypt them properly. What Day One doesn't do is treat the clip as the entry: it doesn't open on a camera, it doesn't lay your days out as a wall of clips, and it doesn't turn them into a film. If you write most days and film some, it's the best app you can pick. If you want to talk to your phone for a minute a day, you'll be paying for a writing tool and working around it.</p>
+<p>Day One works for video journaling only on a paid plan: Silver ($49.99 a year in the US) or Gold lets you attach videos of up to five minutes to written entries, and the free Basic plan takes no video at all. On Silver and Gold, Day One syncs those clips everywhere and encrypts them properly. What Day One doesn't do is treat the clip as the entry: it doesn't open on a camera, it doesn't lay your days out as a wall of clips, and it doesn't turn them into a film. If you write most days and film some, it's the best app you can pick. If you want to talk to your phone for a minute a day, you'll be paying for a writing tool and working around it.</p>
 
 <div class="tip"><strong>Quick answer:</strong> Stay with <strong>Day One</strong> if writing is the main event, if you need Android, iPad or the web, or if you want spoken entries transcribed so you can search them later. Video needs Silver ($49.99 a year in the US). Use a <strong>camera-first video diary</strong> if the clip is the entry and you want a film of your year at the end. I build one of those, Video Diary, so weigh that recommendation accordingly.</div>
 
@@ -183,14 +201,14 @@
 </tbody>
 </table>
 </div>
-<p class="meta">Day One details are from its pricing and help guides and its US App Store listing as of 17 October 2026.</p>
+<p class="meta">Day One details are from its <a href="https://dayoneapp.com/plans/">plans page</a>, its <a href="https://dayoneapp.com/guides/premium-subscription/day-one-pricing-features-guide/">pricing and features guide</a> and <a href="https://dayoneapp.com/blog/help_guides/adding-media-in-day-one/">media guide</a>, and its <a href="https://apps.apple.com/us/app/id1044867788">US App Store listing</a>, as of 17 October 2026; the video length limit was rechecked on 22 November 2026.</p>
 
 <h2>Where Day One is better</h2>
 <p>Day One has 4.8 stars from about 118,000 ratings on the US App Store. That isn't luck, and most of what it's good at, a video diary can't touch.</p>
 <ul>
 <li><strong>It's the better journal for writing.</strong> Long entries, formatting, multiple journals, tags, and search across years of text. If you think in sentences, nothing I make comes close.</li>
 <li><strong>It can make your voice searchable.</strong> On the paid plans you can record audio inside an entry and Day One transcribes up to ten minutes of it. Six months later you can search for "job offer" and find the night you talked it through. Video Diary can't do that, because nothing listens to what you say. If finding things matters more to you than watching them, this point alone should decide it.</li>
-<li><strong>It's everywhere you are.</strong> iPhone, iPad, Mac, Apple Watch, Android and a web app, all syncing. Video Diary is iPhone, Mac and Vision Pro, with no Android version and no native iPad app.</li>
+<li><strong>It's everywhere you are.</strong> iPhone, iPad, Mac, Apple Watch, Android and a web app, all syncing. Video Diary is iPhone and iPad only, with no Android version and no web app.</li>
 <li><strong>Encryption on every tier.</strong> Even the free plan gets end-to-end encryption, which is still unusual. Your entries are encrypted before they reach Day One's servers.</li>
 <li><strong>It's been around long enough to trust.</strong> People have kept Day One journals for over a decade. If you're choosing an app to hold twenty years of your life, a long track record matters.</li>
 </ul>
@@ -202,11 +220,11 @@
 <li><strong>Fewer steps to the record button.</strong> In Day One, a video entry means creating an entry, opening the media options, recording, then returning to a text page that expects you to write something. Video Diary opens on the camera. That gap sounds trivial until you notice it's where daily habits die: every screen between the app icon and REC is a chance to decide "not tonight".</li>
 <li><strong>Your days, not your paragraphs.</strong> The home screen is a month calendar with a video thumbnail on every day you recorded. You see the gaps and the streaks, and the diary starts to feel like a place. Day One organises everything around entries, which is right for writing, but a year of clips with a line of text under each reads as a list rather than a year you can see at a glance.</li>
 <li><strong>The film at the end.</strong> Recording is the habit; watching it back is the reward. Video Diary's montage maker stitches your days into one movie at whatever clip length you like. Day One has nothing like it, so you'd be exporting clips and cutting them yourself. I wrote up <a href="/guides/how-to-make-a-memory-montage">how to make a memory montage</a> both ways if you want to compare.</li>
-<li><strong>No length surprises.</strong> Day One's help pages disagree on whether video is capped at five minutes: one says yes, another says only the Android camera stops there. In a video-first app, the clip is the entry, so there's no attachment limit to bump into.</li>
+<li><strong>No five-minute cap.</strong> Day One stops each video at five minutes, on every platform, according to its own media guide. In Video Diary the clip is the entry, so there's no attachment limit to bump into.</li>
 <li><strong>No AI tier to decline.</strong> Day One's AI lives in Gold and is opt-in, which is a fair way to do it. Video Diary simply has none, and no account either. I've covered <a href="/guides/journaling-apps-without-ai">which journals still leave AI out</a> separately, including where Day One fits.</li>
 </ul>
 
-<img class="shot-inline" src="/assets/screenshot-1.png" alt="Video Diary calendar view on iPhone with a video thumbnail on each recorded day of the month" width="1284" height="2778" loading="lazy">
+<picture><source type="image/webp" srcset="/assets/screenshot-1.webp"><img class="shot-inline" src="/assets/screenshot-1.png" alt="Video Diary calendar view on iPhone with a video thumbnail on each recorded day of the month" width="1284" height="2778" loading="lazy"></picture>
 
 <h2>Can Day One be your video diary?</h2>
 <p>Yes, if you pay for Silver, and some people make it work for years. The real question is what you want back at the end.</p>
@@ -228,7 +246,7 @@
 <div class="app-callout">
 <h2>If you'd rather talk than type</h2>
 <p>Video Diary opens on the camera. Tap REC, say what's on your mind, and the day lands on your calendar with an optional mood and note. No account, no feed, and no model anywhere near what you say. When you want to look back, the montage maker turns your days into one film.</p>
-<p>Free for daily journaling on iPhone (iOS 17.6+), Apple silicon Mac and Vision Pro; 4.5 stars from 39 ratings on the US App Store, which is a small base, so treat it as a signal. Premium is $6.99 a week or $44.99 a year in the US and adds palettes, fonts, Face ID lock and iCloud backup, not the ability to record. <a href="https://apps.apple.com/app/apple-store/id1606008204?pt=121784039&amp;ct=day-one-video-journaling&amp;mt=8">Try Video Diary free</a>. No Android version, and it isn't a native iPad app.</p>
+<p>Free for daily journaling on iPhone (iOS 17.6+) and iPad; 4.5 stars from 39 ratings on the US App Store, which is a small base, so treat it as a signal. Premium is $6.99 a week or $44.99 a year in the US and adds palettes, fonts, Face ID lock and iCloud backup, not the ability to record. <a href="https://apps.apple.com/app/apple-store/id1606008204?pt=121784039&amp;ct=day-one-video-journaling&amp;mt=8">Try Video Diary free</a>. No Android version.</p>
 </div>
 
 <h2>Frequently asked questions</h2>
@@ -242,7 +260,7 @@
 <details>
 <summary>Is there a video length limit in Day One?</summary>
 <div class="answer">
-<p>Day One's own help pages don't agree. Its pricing guide lists a five-minute limit for video, while its media guide says only the Android in-app camera stops at five minutes and that the Apple apps don't cap clips by length. If you talk for longer than five minutes, test it before you rely on it.</p>
+<p>Yes. Day One caps each video at five minutes. Its <a href="https://dayoneapp.com/guides/premium-subscription/day-one-pricing-features-guide/">pricing guide</a> lists a five-minute limit for video, and its <a href="https://dayoneapp.com/blog/help_guides/adding-media-in-day-one/">media guide</a> says a video longer than five minutes shows an error and that the limit is the same on every platform. If you talk for longer than five minutes, record in a dedicated video app or split the entry.</p>
 </div>
 </details>
 <details>
@@ -315,7 +333,7 @@
     <div class="footer-cols">
       <div>
         <h3>Video Diary</h3>
-        <p>The simplest video journaling app for iPhone, Mac, and Apple Vision Pro. Private by design — no AI, no feed, just your story.</p>
+        <p>The simplest video journaling app for iPhone and iPad. Private by design — no AI, no feed, just your story.</p>
       </div>
       <div>
         <h3>Guides</h3>
@@ -344,6 +362,9 @@
           <li><a href="/#how-it-works">How it works</a></li>
           <li><a href="/#faq">FAQ</a></li>
           <li><a href="https://riccardoios.github.io/life-in-seconds-video-diary">Privacy policy</a></li>
+          <li><a href="/about">About &amp; contact</a></li>
+          <li><a href="https://www.instagram.com/videodiary.app" rel="me">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@beckybecky7972" rel="me">TikTok</a></li>
         </ul>
       </div>
     </div>

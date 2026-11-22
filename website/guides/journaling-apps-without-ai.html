@@ -31,14 +31,32 @@
     "image": "https://videodiary.io/assets/og-image.png",
     "author": {
       "@type": "Person",
-      "name": "Riccardo Carlotto"
+      "@id": "https://videodiary.io/about#riccardo",
+      "name": "Riccardo Carlotto",
+      "url": "https://videodiary.io/about",
+      "jobTitle": "Independent iOS developer",
+      "sameAs": [
+        "https://github.com/Riccardoios",
+        "https://apps.apple.com/us/developer/riccardo-carlotto/id1522617028"
+      ]
     },
     "publisher": {
-      "@type": "Person",
-      "name": "Riccardo Carlotto"
+      "@type": "Organization",
+      "@id": "https://videodiary.io/#org",
+      "name": "Video Diary",
+      "url": "https://videodiary.io/",
+      "logo": "https://videodiary.io/assets/icon-1024.png",
+      "email": "developer.riccardo.mobile@gmail.com",
+      "founder": { "@id": "https://videodiary.io/about#riccardo" },
+      "sameAs": [
+        "https://www.instagram.com/videodiary.app",
+        "https://www.tiktok.com/@beckybecky7972",
+        "https://apps.apple.com/us/app/video-diary/id1606008204",
+        "https://github.com/Riccardoios"
+      ]
     },
     "datePublished": "2026-09-11",
-    "dateModified": "2026-09-11",
+    "dateModified": "2026-11-22",
     "mainEntityOfPage": "https://videodiary.io/guides/journaling-apps-without-ai"
   },
   {
@@ -124,7 +142,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/">
-      <img src="/assets/apple-touch-icon.png" alt="Video Diary app icon" width="40" height="40">
+      <picture><source type="image/webp" srcset="/assets/apple-touch-icon.webp"><img src="/assets/apple-touch-icon.png" alt="Video Diary app icon" width="40" height="40"></picture>
       Video Diary
     </a>
     <nav class="site-nav" aria-label="Main">
@@ -143,7 +161,7 @@
   <div class="wrap">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/guides/">Guides</a> › Journaling apps without AI</nav>
     <h1>Journaling apps without AI: 6 that still qualify</h1>
-    <p class="meta">By Riccardo Carlotto · Updated September 2026</p>
+    <p class="meta">By <a href="/about" rel="author">Riccardo Carlotto</a> · Updated November 2026</p>
   </div>
 </div>
 
@@ -153,13 +171,13 @@
 <div class="tip"><strong>Quick answer:</strong> For writing with nothing whatsoever watching, use <strong>Cozy</strong> — $35 once, plain text files on your own disk, no account and no server. If you'd rather not install anything, <strong>Penzu</strong> is free and runs in a browser. <strong>Apple Journal</strong> is free and already on your iPhone, but its no-AI status has an expiry date. <strong>Diarium</strong> is the cross-platform pick with no subscription. <strong>Day One</strong> still counts if you stay on Basic or Silver. And if the entries you want left alone are spoken rather than written, <strong>Video Diary</strong> — which is mine, so read that section with the appropriate suspicion.</div>
 
 <h2>What "no AI" has to actually mean</h2>
-<p>The phrase has been stretched to the point of uselessness. An app can put "private, on-device AI" on its listing and mean anything from a spell checker to a model that reads every entry you've ever written. Three questions separate the real thing from the marketing:</p>
+<p>The phrase "no AI" has been stretched to the point of uselessness. An app can put "private, on-device AI" on its listing and mean anything from a spell checker to a model that reads every entry you've ever written. Three questions separate the real thing from the marketing:</p>
 <ol>
 <li><strong>Does anything read the entry?</strong> Not "does it leave the device" — does any model process the text or audio at all. Transcription counts. Sentiment scoring counts. "Smart title suggestions" counts.</li>
 <li><strong>Is the AI a tier or a foundation?</strong> If it's a paid add-on, you can decline it and the app still works, which is the Day One situation. If the app's core loop is a chat that turns into an entry, there is nothing to decline.</li>
 <li><strong>Can it arrive in an update?</strong> This is the one nobody checks. An app with a subscription and a roadmap has a commercial reason to add AI next year. An app with no server has a much harder time doing it quietly.</li>
 </ol>
-<p>Question three is why I've weighted architecture over promises below. A company that keeps your entries on its own machines can change its mind about what to do with them. A company that never receives them can't.</p>
+<p>The third question, whether AI can arrive in an update, is why I've weighted architecture over promises below. A company that keeps your entries on its own machines can change its mind about what to do with them. A company that never receives them can't.</p>
 
 <h2>The six apps</h2>
 
@@ -177,8 +195,8 @@
 
 <h3>Apple Journal — free, already installed, and on a clock</h3>
 <p><strong>Best for:</strong> starting tonight without spending anything or deciding anything.</p>
-<p>It's free forever, it's on your phone already, and since iPadOS 26 and macOS 26 it syncs across iPhone, iPad and Mac. Entries are stored on-device with end-to-end encrypted iCloud sync. There's no AI chat layer in the core app today.</p>
-<p><strong>Where it loses:</strong> "today" is doing work in that sentence. Apple demonstrated dynamic AI writing prompts for Journal in iOS 27 — prompts generated from what you've already written, which means something is reading the entry to produce them. If you're choosing a no-AI journal specifically and you update your iPhone like everyone else does, you are choosing an app that is scheduled to stop being one. It's still the right place to find out whether you'll stick with journaling at all before paying for anything.</p>
+<p>Apple Journal is free forever, it's on your phone already, and since iPadOS 26 and macOS 26 it syncs across iPhone, iPad and Mac. Entries are stored on-device with <a href="https://support.apple.com/en-us/102651">end-to-end encrypted iCloud sync</a>. There's no AI chat layer in the core app today.</p>
+<p><strong>Where Apple Journal loses:</strong> "today" is doing work in that sentence. Apple demonstrated dynamic AI writing prompts for Journal in iOS 27 — prompts generated from what you've already written, which means something is reading the entry to produce them. If you're choosing a no-AI journal specifically and you update your iPhone like everyone else does, you are choosing an app that is scheduled to stop being one. It's still the right place to find out whether you'll stick with journaling at all before paying for anything.</p>
 
 <h3>Diarium — the cross-platform one without a subscription</h3>
 <p><strong>Best for:</strong> a Windows and Android household that wants one journal everywhere.</p>
@@ -187,23 +205,23 @@
 
 <h3>Day One — still qualifies, with a footnote</h3>
 <p><strong>Best for:</strong> people who want the most polished written journal and are willing to decline a tier.</p>
-<p>Day One is the best-built app in this category and I'd be lying to say otherwise. End-to-end encryption, genuine cross-platform support, a mature and careful piece of software. In April 2026 it launched Gold at $74.99 a year: Daily Chat, entry summaries, Go Deeper prompts, title suggestions, image generation. That's the tier with the AI in it.</p>
+<p>Day One is the best-built app in this category and I'd be lying to say otherwise. End-to-end encryption, genuine cross-platform support, a mature and careful piece of software. In April 2026 Day One <a href="https://dayoneapp.com/releases/2026-7/">launched Gold</a> at $74.99 a year: Daily Chat, entry summaries, Go Deeper prompts, title suggestions, image generation. That's the tier with the AI in it.</p>
 <p>Basic is free. Silver is $49.99 a year and has none of those features. So Day One belongs on this list — you just have to keep choosing not to upgrade, on an app whose company has now built a commercial case for the thing you're avoiding.</p>
 <p><strong>Where it loses:</strong> only that. If Day One had never shipped Gold it would be the flat recommendation here for written journaling, and for a lot of readers it still should be. If you'd use it mainly for video, I've covered <a href="/guides/day-one-video-journaling">how Day One works as a video journal</a> too.</p>
 
 <h3>Video Diary — if the entries are spoken</h3>
 <p><strong>Best for:</strong> someone who'd rather talk for ninety seconds than write, and wants nobody listening back.</p>
-<p>This one's mine, so the useful half of this section is the criticism. It's a video journal: it opens directly on the camera, you tap record and talk, and the entry lands on a calendar with an optional mood and a written note. Nothing is transcribed, summarized, scored or sent anywhere — there is no model in the app at all. The daily reflection question on the record screen is a fixed list I wrote, not something generating questions about you. A montage maker stitches your days into one film at whatever clip length you want.</p>
-<p>Free to record every day. Premium on the US App Store is $6.99 a week or $44.99 a year, and it buys colour palettes, fonts, Face ID lock and iCloud backup — not the ability to journal. It runs on iPhone (iOS 17.6+), Apple silicon Macs and Vision Pro, and it's at 4.5 stars from 31 ratings, which is a small enough base that you should treat it as a signal rather than proof.</p>
-<p><strong>Where it loses:</strong> no Android, no web, and it is not an iPad app — iPad runs it scaled. And the no-AI stance has a direct cost: because nothing is transcribed, you cannot search what you said, only what you typed in a note. If finding "that time I talked about the job offer" matters more to you than keeping the recording unprocessed, a transcribing app genuinely serves you better, and I'd rather say so than sell you the wrong thing.</p>
+<p>Video Diary is mine, so the useful half of this section is the criticism. Video Diary is a video journal: it opens directly on the camera, you tap record and talk, and the entry lands on a calendar with an optional mood and a written note. Nothing is transcribed, summarized, scored or sent anywhere — there is no model in the app at all. The daily reflection question on the record screen is a fixed list I wrote, not something generating questions about you. A montage maker stitches your days into one film at whatever clip length you want.</p>
+<p>Free to record every day. Premium on the US App Store is $6.99 a week or $44.99 a year, and it buys colour palettes, fonts, Face ID lock and iCloud backup — not the ability to journal. It runs on iPhone (iOS 17.6+) and iPad, and it's at 4.5 stars from 31 ratings, which is a small enough base that you should treat it as a signal rather than proof.</p>
+<p><strong>Where Video Diary loses:</strong> no Android and no web version. And the no-AI stance has a direct cost: because nothing is transcribed, you cannot search what you said, only what you typed in a note. If finding "that time I talked about the job offer" matters more to you than keeping the recording unprocessed, a transcribing app genuinely serves you better, and I'd rather say so than sell you the wrong thing.</p>
 
 <div class="app-callout">
 <h2>If it's the spoken kind you want left alone</h2>
 <p>Video Diary opens on the camera. No account, no feed, no model anywhere near what you say. You tap record, talk for a minute, and it lands on your calendar — and at the end of the year the montage maker turns those days into one film.</p>
-<p>Free for daily journaling, on iPhone, Mac and Vision Pro. <a href="https://apps.apple.com/app/apple-store/id1606008204?pt=121784039&amp;ct=journaling-apps-without-ai&amp;mt=8">Try Video Diary free</a>. If you'd rather write than talk, take Cozy or Day One instead — the point is that you keep a diary, not that you keep mine.</p>
+<p>Free for daily journaling, on iPhone and iPad. <a href="https://apps.apple.com/app/apple-store/id1606008204?pt=121784039&amp;ct=journaling-apps-without-ai&amp;mt=8">Try Video Diary free</a>. If you'd rather write than talk, take Cozy or Day One instead — the point is that you keep a diary, not that you keep mine.</p>
 </div>
 
-<img class="shot-inline" src="/assets/screenshot-2.png" alt="Video Diary record screen on iPhone showing the REC button, a written daily reflection prompt, and the mood picker" width="1284" height="2778" loading="lazy">
+<picture><source type="image/webp" srcset="/assets/screenshot-2.webp"><img class="shot-inline" src="/assets/screenshot-2.png" alt="Video Diary record screen on iPhone showing the REC button, a written daily reflection prompt, and the mood picker" width="1284" height="2778" loading="lazy"></picture>
 
 <h2>The apps side by side</h2>
 <div class="table-wrap">
@@ -217,7 +235,7 @@
 <tr><th>Apple Journal</th><td>On device, E2E iCloud sync</td><td>None today; prompts due in iOS 27</td><td>iPhone, iPad, Mac</td><td>Free</td></tr>
 <tr><th>Diarium</th><td>On device, your own sync</td><td>None advertised</td><td>Windows, Android, iPhone, iPad, Mac</td><td>Free; Pro one-time per platform</td></tr>
 <tr><th>Day One</th><td>Synced, E2E encrypted</td><td>Only on Gold ($74.99/yr)</td><td>Apple, Android, web</td><td>Free; Silver $49.99/yr</td></tr>
-<tr><th>Video Diary</th><td>On device / your iCloud</td><td>None</td><td>iPhone, Mac, Vision Pro</td><td>Free; Premium $44.99/yr</td></tr>
+<tr><th>Video Diary</th><td>On device / your iCloud</td><td>None</td><td>iPhone, iPad</td><td>Free; Premium $44.99/yr</td></tr>
 </tbody>
 </table>
 </div>
@@ -312,7 +330,7 @@
     <div class="footer-cols">
       <div>
         <h3>Video Diary</h3>
-        <p>The simplest video journaling app for iPhone, Mac, and Apple Vision Pro. Private by design — no AI, no feed, just your story.</p>
+        <p>The simplest video journaling app for iPhone and iPad. Private by design — no AI, no feed, just your story.</p>
       </div>
       <div>
         <h3>Guides</h3>
@@ -341,6 +359,9 @@
           <li><a href="/#how-it-works">How it works</a></li>
           <li><a href="/#faq">FAQ</a></li>
           <li><a href="https://riccardoios.github.io/life-in-seconds-video-diary">Privacy policy</a></li>
+          <li><a href="/about">About &amp; contact</a></li>
+          <li><a href="https://www.instagram.com/videodiary.app" rel="me">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@beckybecky7972" rel="me">TikTok</a></li>
         </ul>
       </div>
     </div>

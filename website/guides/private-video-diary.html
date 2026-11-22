@@ -32,14 +32,32 @@
     "image": "https://videodiary.io/assets/og-image.png",
     "author": {
       "@type": "Person",
-      "name": "Riccardo Carlotto"
+      "@id": "https://videodiary.io/about#riccardo",
+      "name": "Riccardo Carlotto",
+      "url": "https://videodiary.io/about",
+      "jobTitle": "Independent iOS developer",
+      "sameAs": [
+        "https://github.com/Riccardoios",
+        "https://apps.apple.com/us/developer/riccardo-carlotto/id1522617028"
+      ]
     },
     "publisher": {
-      "@type": "Person",
-      "name": "Riccardo Carlotto"
+      "@type": "Organization",
+      "@id": "https://videodiary.io/#org",
+      "name": "Video Diary",
+      "url": "https://videodiary.io/",
+      "logo": "https://videodiary.io/assets/icon-1024.png",
+      "email": "developer.riccardo.mobile@gmail.com",
+      "founder": { "@id": "https://videodiary.io/about#riccardo" },
+      "sameAs": [
+        "https://www.instagram.com/videodiary.app",
+        "https://www.tiktok.com/@beckybecky7972",
+        "https://apps.apple.com/us/app/video-diary/id1606008204",
+        "https://github.com/Riccardoios"
+      ]
     },
     "datePublished": "2026-07-14",
-    "dateModified": "2026-07-14",
+    "dateModified": "2026-11-22",
     "mainEntityOfPage": "https://videodiary.io/guides/private-video-diary"
   },
   {
@@ -74,7 +92,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/">
-      <img src="/assets/apple-touch-icon.png" alt="Video Diary app icon" width="40" height="40">
+      <picture><source type="image/webp" srcset="/assets/apple-touch-icon.webp"><img src="/assets/apple-touch-icon.png" alt="Video Diary app icon" width="40" height="40"></picture>
       Video Diary
     </a>
     <nav class="site-nav" aria-label="Main">
@@ -93,17 +111,17 @@
   <div class="wrap">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/guides/">Guides</a> › Private video diary</nav>
     <h1>How to keep a private video diary</h1>
-    <p class="meta">Video journaling guide · Updated July 2026</p>
+    <p class="meta">By <a href="/about" rel="author">Riccardo Carlotto</a> · Updated November 2026</p>
   </div>
 </div>
 
 <article class="guide">
 <p>A diary only works if you're honest in it, and you're only honest when you're certain nobody's watching. That was easy with a notebook and a drawer. With video, your most unguarded moments are files on a phone — so privacy isn't a feature checkbox, it's the foundation the entire habit stands on. Here's what a genuinely private video diary looks like, and the red flags to avoid.</p>
 
-<h2>Why privacy changes what you record</h2>
-<p>People who journal on camera for an audience — even a potential audience — perform. They sit up straighter, skip the embarrassing parts, narrate instead of confess. The therapeutic value of journaling comes precisely from the parts you'd never post. If any part of your brain believes the video could be seen, analyzed, or leaked, that part will quietly censor you, and your diary becomes a highlight reel.</p>
+<h2>Why does privacy change what you record?</h2>
+<p>Privacy changes what you record because you only tell the truth to a camera you trust. People who journal on camera for an audience — even a potential audience — perform. They sit up straighter, skip the embarrassing parts, narrate instead of confess. The therapeutic value of journaling comes precisely from the parts you'd never post. If any part of your brain believes the video could be seen, analyzed, or leaked, that part will quietly censor you, and your diary becomes a highlight reel.</p>
 
-<h2>What to look for in a private video diary app</h2>
+<h2>What should a private video diary app have?</h2>
 
 <h3>Your videos stay yours</h3>
 <p>Entries should live on your device or in <em>your</em> personal iCloud — not on the app company's servers. If videos upload to someone else's infrastructure by default, you're trusting a startup's security team, retention policy, and eventual acquirer with your unguarded face.</p>
@@ -120,13 +138,20 @@
 <h3>No account requirement</h3>
 <p>An app that works without sign-up can't tie your entries to your identity on a server. It's also a good signal about the business model: an app that doesn't want your email probably doesn't want your data.</p>
 
-<h2>Red flags</h2>
+<h2>What are the red flags in a video diary app?</h2>
+<p>The red flags in a video diary app are anything that shares, analyses or uploads your entries without you clearly asking for it:</p>
 <ul>
 <li>"Share your journey with friends!" — it's a platform, not a diary.</li>
 <li>AI insights/transcription enabled by default — your entries are being processed.</li>
 <li>Mandatory account creation before first recording.</li>
 <li>A privacy policy that mentions "partners," "personalization," or "service improvement" near the word "content."</li>
 </ul>
+
+<h2>Is a video diary private if it's backed up to iCloud?</h2>
+<p>A video diary backed up to iCloud is encrypted, but under Apple's standard data protection Apple holds the keys. If you turn on <a href="https://support.apple.com/en-us/108756">Advanced Data Protection</a>, iCloud Backup, iCloud Drive and app data in CloudKit's encrypted fields become end-to-end encrypted, so only your own devices can read them. Apple's <a href="https://support.apple.com/en-us/102651">iCloud data security overview</a> lists exactly which data is covered under each setting. A backup to the app developer's own servers is a different trust model: you're relying on their security and their policies, for as long as they keep your files. We cover backup in more detail in <a href="/guides/back-up-video-journal">how to back up a video journal</a>.</p>
+
+<h2>Can someone else open my video diary?</h2>
+<p>Anyone who can unlock your iPhone can open your video diary, unless the app has its own lock. That's why a Face ID lock matters for a diary app. It stops the person you've handed your phone to, to show a photo, from tapping into last night's entry. Also check where exports go. Saving clips to Photos puts them in your camera roll, where they can turn up in Memories or a Shared Library. Saving to Files keeps them out of the way.</p>
 
 <div class="app-callout">
 <h2>How Video Diary handles privacy</h2>
@@ -141,7 +166,7 @@
 <p><a href="https://apps.apple.com/app/apple-store/id1606008204?pt=121784039&amp;ct=website&amp;mt=8">Download Video Diary free</a> and record the entry you'd never say out loud anywhere else. That's the one worth keeping.</p>
 </div>
 
-<img class="shot-inline" src="/assets/screenshot-3.png" alt="Video Diary app — built for privacy, a private video diary gallery with no social features" width="1284" height="2778" loading="lazy">
+<picture><source type="image/webp" srcset="/assets/screenshot-3.webp"><img class="shot-inline" src="/assets/screenshot-3.png" alt="Video Diary app — built for privacy, a private video diary gallery with no social features" width="1284" height="2778" loading="lazy"></picture>
 
 <div class="tip"><strong>Quick answer:</strong> A private video diary keeps videos on your device or personal iCloud, uses no AI processing, requires no account, has no social features, and locks behind Face ID. If an app fails any of those, don't trust it with your unguarded self.</div>
 </article>
@@ -193,7 +218,7 @@
     <div class="footer-cols">
       <div>
         <h3>Video Diary</h3>
-        <p>The simplest video journaling app for iPhone, Mac, and Apple Vision Pro. Private by design — no AI, no feed, just your story.</p>
+        <p>The simplest video journaling app for iPhone and iPad. Private by design — no AI, no feed, just your story.</p>
       </div>
       <div>
         <h3>Guides</h3>
@@ -222,6 +247,9 @@
           <li><a href="/#how-it-works">How it works</a></li>
           <li><a href="/#faq">FAQ</a></li>
           <li><a href="https://riccardoios.github.io/life-in-seconds-video-diary">Privacy policy</a></li>
+          <li><a href="/about">About &amp; contact</a></li>
+          <li><a href="https://www.instagram.com/videodiary.app" rel="me">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@beckybecky7972" rel="me">TikTok</a></li>
         </ul>
       </div>
     </div>

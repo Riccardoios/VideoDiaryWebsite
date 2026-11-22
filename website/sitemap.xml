@@ -2,103 +2,109 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://videodiary.io/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://videodiary.io/about</loc>
+    <lastmod>2026-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://videodiary.io/guides/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://videodiary.io/guides/how-to-start-a-video-diary</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://videodiary.io/guides/benefits-of-video-journaling</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://videodiary.io/guides/best-video-diary-app-iphone</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://videodiary.io/guides/best-video-journaling-apps</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://videodiary.io/guides/one-second-a-day-video-journal</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://videodiary.io/guides/video-journal-prompts</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://videodiary.io/guides/private-video-diary</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://videodiary.io/guides/video-journaling-for-mental-health</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://videodiary.io/guides/how-to-make-a-memory-montage</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://videodiary.io/guides/1-second-everyday-alternatives</loc>
-    <lastmod>2026-08-28</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://videodiary.io/guides/journaling-apps-without-ai</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://videodiary.io/guides/apple-journal-video-journaling</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://videodiary.io/guides/day-one-video-journaling</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://videodiary.io/guides/mood-tracker-video-journal</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://videodiary.io/guides/back-up-video-journal</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
