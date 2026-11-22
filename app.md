@@ -14,7 +14,7 @@
 | Developer | Riccardo Carlotto | — |
 | Category | Lifestyle (secondary: Photo & Video) | 2026-08-01 |
 | Price | Free (with optional Premium subscription) | 2026-08-01 |
-| Rating | 4.5 ★ (30 ratings, US storefront) | 2026-08-28 |
+| Rating | 4.4 ★ (44 ratings, US storefront) | 2026-11-22 |
 | Age rating | 4+ | 2026-07-14 |
 | Current version | 2.24 (released 2026-08-21) | 2026-08-28 |
 | First released | 2022-01-22 | — |
