@@ -549,3 +549,6 @@ article.guide .faq summary { font-size: 1.15rem; }
   margin: 0 auto;
   padding: 1rem 1.25rem 3.5rem;
 }
+
+/* About page portrait */
+.author-photo img { display: block; width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin: 0 0 1rem; }
